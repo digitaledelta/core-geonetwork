@@ -1,0 +1,107 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+            <div class="col-sm-3 d_logo"><a href="https://publicwiki.deltares.nl/display/OET/openearth"><img src="../../catalog/views/deltares/images/logo_OET.png"></a></div>
+			<div class=" col-sm-6" style="text-align:center;">
+				<h1 data-translate=""
+					data-translate-values="{orgName: '{{info.site.organization}}'}">welcomeTitle</h1>
+
+				<p data-translate="">welcomeText</p>
+			</div>
+			<div class="col-sm-3 d_logo"><a href="https://publicwiki.deltares.nl/display/OET/openearth"><img src="../../catalog/views/deltares/images/DELTARES_WOORDBEELDMERK_RGB_200x115.png"></img></a></div>
+		</div>
+	</div>
+  <div class="navbar-header">
+    <button type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li>
+        <a data-gn-active-tb-item="catalog.search#/home">
+          <img class="gn-logo"
+               data-ng-src="../../images/logos/{{info.site.siteId}}.png?{{info.site.lastUpdate}}"/>
+          <span class="visible-lg">{{info.site.name}}</span>
+        </a>
+      </li>
+      <li data-ng-if="isMapViewerEnabled">
+        <a data-gn-active-tb-item="catalog.search#/map"
+           title="{{'map' | translate}}">
+          <i class="fa fa-globe"></i>
+          <span class="visible-lg" data-translate="">makeYourMap</span>
+        </a>
+      </li>
+      <li data-ng-show="authenticated">
+        <a data-gn-active-tb-item="catalog.edit"
+           title="{{'editorBoard' | translate}}">
+          <i class="fa fa-plus"></i>
+          <span class="visible-lg" data-translate="">contribute</span>
+        </a>
+      </li>
+      <li class="dropdown" data-ng-show="authenticated">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown"
+           role="button" aria-expanded="false"><span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li>
+            <a data-gn-active-tb-item="catalog.edit#/create">
+              <i class="fa fa-plus"/>&nbsp;<span data-translate="">addRecord</span>
+            </a>
+          </li>
+          <li>
+            <a data-gn-active-tb-item="catalog.edit#/import">
+              <i class="fa fa-upload"/>&nbsp;<span data-translate="">ImportRecord</span>
+            </a>
+          </li>
+          <li>
+            <a data-gn-active-tb-item="catalog.edit#/directory"
+               data-ng-if="user.isReviewerOrMore()">
+              <i class="fa fa-list-ul"/>&nbsp;<span data-translate="">directoryManager</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li data-ng-show="user.isReviewerOrMore()">
+        <a data-gn-active-tb-item="admin.console"
+           title="{{'adminConsole' | translate}}">
+          <i class="fa fa-th"></i>
+          <span class="visible-lg" data-translate="">adminConsole</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li data-ng-show="authenticated">
+        <a href="{{pages.admin}}#/organization/users?userOrGroup={{user.username}}"
+           title="{{'userDetails' | translate}}"
+           class="hidden-xs btn btn-link">
+          <img class="img-circle"
+               data-ng-src="http://gravatar.com/avatar/{{user.email | md5}}?s=18"/>
+          {{user.name}} {{user.surname}} ({{user.profile | translate}})
+        </a>
+      </li>
+      <li data-ng-show="authenticated">
+        <a href="../../j_spring_security_logout"
+           title="{{'signout' | translate}}">
+          <i class="fa fa-sign-out"></i> {{'signout' | translate}}
+        </a>
+      </li>
+      <li data-ng-show="!authenticated">
+        <a href="{{pages.signin}}"
+           title="{{'signIn'|translate}}"
+           data-ng-keypress="$event">
+           <i class="fa fa-sign-in"/>
+           {{'signIn' | translate}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

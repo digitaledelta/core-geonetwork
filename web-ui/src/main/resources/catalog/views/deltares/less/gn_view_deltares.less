@@ -1,0 +1,157 @@
+body
+{
+    font-family: "Arial";
+    font-size: 13px; 
+    background-color:#068bc0;  
+}
+
+h4, .h4
+{
+    font-size: 18px;
+}
+
+h4, .h4, h5, .h5, h6, .h6
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+{
+    color: inherit;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.panel
+{
+    display:block;
+    border:1px solid lightgrey;
+    background-color: #fff;
+    border-radius: 6px;
+    color: #333;
+    margin-top: 15px;
+    text-overflow: ellipsis;
+    min-height: 105px;
+    padding: 5px 10px 10px;
+}
+
+.link
+{
+   cursor: pointer;  
+}
+
+.navbar
+{
+    background-color:#fff;
+    
+    .d_logo{
+        img
+        {
+            height: 96px;
+            width:auto; 
+        }
+        
+        &:first-child img
+        {
+            float:left;
+        }
+
+        &:last-child img
+        {
+            float:right;
+        }
+    }
+}
+
+.d_collection-box
+{
+    margin:24px;
+    padding:24px;
+    border:solid 2px #fff;
+    border-radius:12px;
+    text-align:center;
+    background-color:rgba(256, 256, 256, 0.5);
+}
+
+.gn-info-list li > div
+{
+    background-color: #fff;
+    border-color: #fff #fff #000;
+    border-image: none;
+    border-style: solid;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-width: 2px;
+    cursor: pointer;
+    height: 125px;
+    margin: 0;
+    padding: 15px;
+}
+
+.d_column {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
+
+.gn-md-thumbnail
+{
+    background-image: none !important;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.gn-md-thumbnail img
+{
+    zoom: 2;  //increase if you have very small images
+
+    display: block;
+    margin: auto;
+
+    height: auto;
+    max-height: 100%;
+
+    width: auto;
+    max-width: 100%;
+}
+
+#gn-any-field
+{
+    border-radius:6px;
+}
+.gn-form-any
+{
+    width:100%;
+}
+
+
+.d_searchbtns
+{
+    margin-top:64px;
+    width:100%;
+    
+    .btn
+    {
+        height:64px;
+        border:1px solid #ccc;
+    }
+    
+    .d_primary_btn
+    {
+       width:70%;
+        background-color:#83c5e0;
+        color:white;
+        font-size: 20px;
+    }
+    .d_secondary_btn
+    {
+        width:28%;
+        color:#068bc0;
+        font-size: 16px;
+    }
+}

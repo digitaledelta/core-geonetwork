@@ -1,0 +1,86 @@
+<div class="row" style="margin-bottom:20px;">
+
+
+<div class="col-md-6">
+    
+<form class="form-horizontal"
+      role="form">
+    <!--ANY full text search input-->
+  <div class="row gn-top-search">
+        <div class="row">
+        <h3 data-translate="" style="color:white">what</h3>
+        <div class="col-md-12 relative">
+		   <div class="input-group gn-form-any">
+
+            <input type="text"
+                   class="form-control input-lg d_search-input"
+                   id="gn-any-field"
+                   data-ng-model="searchObj.params.any"
+                   placeholder="{{'anyPlaceHolder' | translate}}"
+                   data-ng-keyup="$event.keyCode == 13 && triggerSearch()"
+                   data-typeahead="address for address in getAnySuggestions($viewValue)"
+                   data-typeahead-loading="anyLoading" class="form-control"
+                   data-typeahead-min-length="1"
+                   data-typeahead-focus-first="false">
+
+            <!--div class="input-group-btn">
+              <button type="button"
+                      data-ng-click="triggerSearch()"
+                      class="btn btn-primary btn-lg">
+                &nbsp;&nbsp;
+                <i class="fa fa-search"></i>
+                &nbsp;&nbsp;
+              </button>
+
+              <button type="button"
+                      data-ng-click="resetSearch();"
+                      title="{{'ClearTitle' | translate}}"
+                      class="btn btn-lg">
+                <i class="fa fa-times"></i>
+              </button>
+            </div -->
+          </div>
+        </div>
+        <div class="col-lg-3">
+        </div>
+      </div>
+    <div class="row">   
+      <h3 data-translate="" style="color:white">when</h3>
+        <div class="col-md-12">
+              
+              <div data-gn-period-chooser="recordsCreatedTheLast"
+                   data-date-from="searchObj.params.dateFrom"
+                   data-date-to="searchObj.params.dateTo">
+              </div>
+            </div>
+      </div>
+    </div>
+    <div class="row">
+    <div class="col-md-12 d_searchbtns">
+              <button type="button"
+                      data-ng-click="triggerSearch()"
+                      class="btn btn-lg d_primary_btn">
+                &nbsp;&nbsp;
+                <!--i class="fa fa-search"></i -->
+                  Search
+                &nbsp;&nbsp;
+              </button>
+
+              <button type="button"
+                      data-ng-click="resetSearch();"
+                      title="{{'ClearTitle' | translate}}"
+                      class="btn d_secondary_btn btn-lg">
+                        Clear search
+                <!--i class="fa fa-times"></i-->
+              </button>
+            </div>
+    </div>
+</form>
+</div>
+    
+<div class="col-md-6">
+    <h3 data-translate="" style="color:white">where</h3>
+    <div style="height:360px; overflow:hidden;" gn-map-field="searchObj.searchMap" gn-map-field-geom="searchObj.params.geometry" gn-map-field-opt="mapfieldOpt"></div>
+</div>
+
+</div>
