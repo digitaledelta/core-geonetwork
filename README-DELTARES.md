@@ -6,13 +6,30 @@ Deltares specific development is done on the 3.0.x-deltares branch which is base
 # Installation
 
 git clone https://github.com/openearth/core-geonetwork.git
+
+Checkout the 3.0.x-deltares branch
+
+git checkout 3.0.x-deltares
+
 Add all submodules (geoserver, bootstrap):
 
 git submodule update --init --recursive
 
+# Database configuration.
+
+For Tomcat deployment the jdbc.properties file needs to be copied to the conf directory of tomcat.
+
+For local development with jetty one of the following should be done:
+
+- Enable the H2 database in the web\src\main\webapp\WEB-INF\config-node\srv.xml
+
+or
+
+- Configure the  web\src\main\webapp\WEB-INF\config-db\jdbc.properties to point to a development postgresql with postgis extensions.
+
 # Synching with the forked 3.0.x-deltares branch 
 
-Make sure your on the 3.0.x-deltares branch
+Make sure your on the 3.0.x branch
 
 $ git branch
 * 3.0.x-deltares
@@ -22,10 +39,6 @@ Check the remotes:
 $ git remote -v
 origin  https://github.com/openearth/core-geonetwork.git (fetch)
 origin  https://github.com/openearth/core-geonetwork.git (push)
-
-Getting the latest changes of 3.0.x-deltares branch
-
-$ git pull
 
 
 #Synching with the upstream and rebasing with 3.0.x-deltares
@@ -80,3 +93,9 @@ $ git status
 Now push the commits to the origin.
 
 $ git push
+
+Now checkout the the deltares branch.
+
+$ git checkout 3.0.x-deltares
+ 
+$ git rebase --interactive 3.0.x
