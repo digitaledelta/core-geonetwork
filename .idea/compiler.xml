@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cachingxslt" target="1.7" />
+      <module name="common" target="1.7" />
+      <module name="core" target="1.7" />
+      <module name="csw-server" target="1.7" />
+      <module name="domain" target="1.7" />
+      <module name="dummy-api" target="1.7" />
+      <module name="e2e-tests" target="1.7" />
+      <module name="events" target="1.7" />
+      <module name="geonetwork" target="1.7" />
+      <module name="geonetwork-client" target="1.7" />
+      <module name="harvesters" target="1.7" />
+      <module name="health-monitor" target="1.7" />
+      <module name="inspire-atom" target="1.7" />
+      <module name="oaipmh" target="1.7" />
+      <module name="schema-core" target="1.7" />
+      <module name="schema-csw-record" target="1.7" />
+      <module name="schema-dublin-core" target="1.7" />
+      <module name="schema-iso19110" target="1.7" />
+      <module name="schema-iso19139" target="1.7" />
+      <module name="schema-tests" target="1.7" />
+      <module name="schemas" target="1.7" />
+      <module name="services" target="1.7" />
+      <module name="web-app" target="1.7" />
+      <module name="web-ui" target="1.7" />
+      <module name="web-ui-docs" target="1.7" />
+      <module name="wro4j" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

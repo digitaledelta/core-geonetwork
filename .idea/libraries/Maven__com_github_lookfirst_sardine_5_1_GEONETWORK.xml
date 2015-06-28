@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.github.lookfirst:sardine:5.1-GEONETWORK">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/lookfirst/sardine/5.1-GEONETWORK/sardine-5.1-GEONETWORK.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/lookfirst/sardine/5.1-GEONETWORK/sardine-5.1-GEONETWORK-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/github/lookfirst/sardine/5.1-GEONETWORK/sardine-5.1-GEONETWORK-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

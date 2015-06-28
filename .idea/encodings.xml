@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cachingxslt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/csw-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/domain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e2e-tests" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/events" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/harvesters" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/healthmonitor" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/inspire-atom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/oaipmh" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schemas" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schemas-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schemas/csw-record" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schemas/dublin-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schemas/iso19110" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schemas/iso19139" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/schemas/schema-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sde" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/services" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web-ui" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web-ui-docs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/wro4j" charset="UTF-8" />
+  </component>
+</project>

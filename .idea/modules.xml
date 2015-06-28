@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cachingxslt/cachingxslt.iml" filepath="$PROJECT_DIR$/cachingxslt/cachingxslt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/csw-server/csw-server.iml" filepath="$PROJECT_DIR$/csw-server/csw-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/domain/domain.iml" filepath="$PROJECT_DIR$/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sde/dummy-api.iml" filepath="$PROJECT_DIR$/sde/dummy-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/events/events.iml" filepath="$PROJECT_DIR$/events/events.iml" />
+      <module fileurl="file://$PROJECT_DIR$/geonetwork.iml" filepath="$PROJECT_DIR$/geonetwork.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-client/geonetwork-client.iml" filepath="$PROJECT_DIR$/web-client/geonetwork-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/harvesters/harvesters.iml" filepath="$PROJECT_DIR$/harvesters/harvesters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/healthmonitor/health-monitor.iml" filepath="$PROJECT_DIR$/healthmonitor/health-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inspire-atom/inspire-atom.iml" filepath="$PROJECT_DIR$/inspire-atom/inspire-atom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oaipmh/oaipmh.iml" filepath="$PROJECT_DIR$/oaipmh/oaipmh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schemas/schema-core/schema-core.iml" filepath="$PROJECT_DIR$/schemas/schema-core/schema-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schemas/csw-record/schema-csw-record.iml" filepath="$PROJECT_DIR$/schemas/csw-record/schema-csw-record.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schemas/dublin-core/schema-dublin-core.iml" filepath="$PROJECT_DIR$/schemas/dublin-core/schema-dublin-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schemas/iso19110/schema-iso19110.iml" filepath="$PROJECT_DIR$/schemas/iso19110/schema-iso19110.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schemas/iso19139/schema-iso19139.iml" filepath="$PROJECT_DIR$/schemas/iso19139/schema-iso19139.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schemas/schemas.iml" filepath="$PROJECT_DIR$/schemas/schemas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/services/services.iml" filepath="$PROJECT_DIR$/services/services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web/web-app.iml" filepath="$PROJECT_DIR$/web/web-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-ui/web-ui.iml" filepath="$PROJECT_DIR$/web-ui/web-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wro4j/wro4j.iml" filepath="$PROJECT_DIR$/wro4j/wro4j.iml" />
+    </modules>
+  </component>
+</project>
