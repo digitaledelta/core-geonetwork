@@ -39,6 +39,7 @@
                 }
                 scope.relations = [];
                 if (scope.uuid) {
+                    console.log(scope.uuid);
                   $http.get(
                      'md.relations?_content_type=json&uuid=' +
                      scope.uuid + (scope.types ? '&type=' +
@@ -90,6 +91,7 @@
                   }
                 });
                 return res;
+                  console.log(res);
               };
             }
           };

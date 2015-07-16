@@ -1,15 +1,22 @@
 <div class="gn-related-resources"
 		 data-ng-show="relations.length > 0">
+    {{relations}}
 	<h2>{{title}}</h2>
 	<div class="row list-group-item gn-related-item"
 				data-ng-repeat="r in relations track by $index"
 				data-ng-init="mainType = config.getType(r);type = r['@type'];"
 				data-ng-if="r['@type'] !== 'thumbnail'">
 
-		<div class="col-xs-1">
+		<div class="col-xs-1 visible-lg-*" data-ng-if="mainType === 'LINKDOWNLOAD'">
 			<strong>
 				<i class="fa fa-2x"
 					 data-ng-class="config.getClassIcon(mainType)"/>&nbsp;
+			</strong>
+		</div>
+        <div class="col-xs-1 visible-lg-*" data-ng-if="mainType !== 'LINKDOWNLOAD'">
+			<strong>
+				<i class="fa fa-2x"
+					 data-ng-class="config.getClassIcon('LINK')"/>&nbsp;
 			</strong>
 		</div>
 		<div class="col-xs-7">
@@ -25,33 +32,27 @@
 											 mainType.indexOf('LINK') === 0 ||
 											 r.protocol === 'OGC:WFS') &&
 											 r['abstract'] && r['abstract'].length > 0">
-        {{(r['abstract'] || r.defaultAbstract) | striptags | characters:150}}
+        {{(r['abstract'] || r.defaultAbstract) | striptags | characters:150}} 
 			</h4>
 
 			<p class="text-muted"
 				 data-ng-if="mainType.indexOf('MD') == 0">
         {{(r['abstract'] || r.defaultAbstract) | striptags | characters:150}}
 			</p>
-			<p class="text-muted"
-				 data-ng-if="mainType === 'WMS'">
-				<span data-translate=""
-							data-translate-values="{url:'{{r.url}}', layer:'{{r.name}}'}">
-					wmsLinkDetails</span>
-			</p>
-			<p class="text-muted"
-				 data-ng-if="r.protocol === 'OGC:WFS'">
-				<span data-translate=""
-							data-translate-values="{url:'{{r.url}}', layer:'{{r.name}}'}">
-					wfsLinkDetails</span>
+			<p class="text-muted">
+                {{r.url}}
 			</p>
 		</div>
-		<div class="col-xs-4">
+		<div class="col-xs-4" style="float:right;">
 			<button type="button"
 							class="btn btn-default btn-lg btn-block"
-							data-ng-click="config.doAction(mainType, r)">
+							data-ng-click="config.doAction('LINK', r)">
 
-				<span class="visible-lg-*">
-					{{(config.getLabel(mainType) + type) | translate}}
+				<span class="visible-lg-*" data-ng-if="mainType === 'LINKDOWNLOAD'">
+					{{(config.getLabel('LINKDOWNLOAD') + type) | translate}}
+				</span>
+                <span class="visible-lg-*" data-ng-if="mainType !== 'LINKDOWNLOAD'">
+					{{(config.getLabel('LINK') + type) | translate}}
 				</span>
 			</button>
 		</div>
