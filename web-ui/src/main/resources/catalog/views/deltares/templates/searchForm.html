@@ -8,7 +8,8 @@
     <!--ANY full text search input-->
   <div class="row gn-top-search">
         <div class="row">
-        <h3 data-translate="" style="color:white">what</h3>
+        <h3 class='d-search_title' data-translate="" style="color:white">what</h3>
+        <span class='d-search_subtitle'>Give one or more search terms (such as 'rijkswaterstaat', 'grondwater' or 'dem')</span>
         <div class="col-md-12 relative">
 		   <div class="input-group gn-form-any">
 
@@ -45,7 +46,8 @@
         </div>
       </div>
     <div class="row">   
-      <h3 data-translate="" style="color:white">when</h3>
+      <h3 class='d-search_title' data-translate="" style="color:white">when</h3>
+        <span class='d-search_subtitle'>Select the time (period) for which the dataset provides information</span>
         <div class="col-md-12">
               
               <div data-gn-period-chooser="recordsCreatedTheLast"
@@ -70,7 +72,14 @@
                       data-ng-click="resetSearch();"
                       title="{{'ClearTitle' | translate}}"
                       class="btn d_secondary_btn btn-lg">
-                        Clear search
+                        Clear
+                <!--i class="fa fa-times"></i-->
+              </button>
+              <button type="button"
+                      onclick="window.open('https://publicwiki.deltares.nl/display/DDP/Find+data','_blank')"
+                      title="Help"
+                      class="btn d_secondary_btn btn-lg">
+                        ?
                 <!--i class="fa fa-times"></i-->
               </button>
             </div>
@@ -79,8 +88,9 @@
 </div>
     
 <div class="col-md-6">
-    <h3 data-translate="" style="color:white">where</h3>
-    <div style="height:360px; overflow:hidden;" gn-map-field="searchObj.searchMap" gn-map-field-geom="searchObj.params.geometry" gn-map-field-opt="mapfieldOpt"></div>
+    <h3 class='d-search_title' data-translate="" style="color:white">where</h3>
+    <span class='d-search_subtitle'>Select an area overlapping with the geographical extent of the dataset</span>
+    <div class="search-map-cont" gn-map-field="searchObj.searchMap" gn-map-field-geom="searchObj.params.geometry" gn-map-field-opt="mapfieldOpt"></div>
 </div>
 
 </div>

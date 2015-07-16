@@ -38,9 +38,9 @@
           </a>
         </div -->
 
-        <div data-gn-metadata-rate="md"
+        <!--div data-gn-metadata-rate="md"
              data-readonly="true"
-             class="pull-right"/>
+             class="pull-right"/ -->
       </div>
       <!--end top row-->
       <div style="clear: both;"></div>
@@ -65,7 +65,7 @@
                   {{md.title || md.defaultTitle}}</a>
               </h3>
               <p class="text-muted">
-                  {{ md.abstract | limitTo : 312}}{{md.abstract.length > 256 ? '...' : ''}} 
+                  {{ md.abstract | limitTo : 150}}{{md.abstract.length > 150 ? '...' : ''}} 
               </p>
               <p class="text-muted">
                   Type: {{md.type[0]}}
@@ -96,14 +96,14 @@
         <div class="gn-md-links">
   
    <!--Edit button-->
-      <a class="gn-md-edit-btn"
+      <!-- a class="gn-md-edit-btn"
          data-ng-show="user.canEditRecord(md)"
          data-ng-href="catalog.edit#/metadata/{{md['geonet:info'].id}}"
          title="{{'edit' | translate}}">
         <i class="fa fa-pencil"></i>
-      </a>
+      </a -->
       
-    <div class="btn-group"
+    <!-- div class="btn-group"
          data-ng-class="::links.length > 0 ? '' : 'invisible'">
       <button type="button"
               class="btn btn-default dropdown-toggle"
@@ -118,10 +118,10 @@
              target="_blank">{{::link.desc}}</a>
         </li>
       </ul>
-    </div>
+    </div -->
     
     
-    <div class="btn-group"
+    <!-- div class="btn-group"
          data-ng-class="::downloads.length > 0 ? '' : 'invisible'">
       <button type="button"
               class="btn btn-default dropdown-toggle"
@@ -138,7 +138,7 @@
             {{link.desc || (link.name + ' - ' + link.contentType) }}</a>
         </li>
       </ul>
-    </div>
+    </div -->
             
             
       
