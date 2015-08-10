@@ -9,19 +9,25 @@
   <div class="row gn-md-view"
        data-ng-show="mdView.current.record">
     <button class="btn btn-primary"
-            data-ng-click="closeRecord(mdView.current.record)">
+            data-ng-click="closeRecord(mdView.current.record);"
       <i class="fa fa-search"></i>
       <span><span>{{'backTo' + (fromView || 'search') | translate}}</span></span>
     </button>
 
-    <button class="btn btn-link"
+    <button class="btn btn-primary ng-hide"
+            data-ng-click="Dfullview=true; format();"
+            ng-hide="Dfullview">
+      <span><span>Close Full view</span></span>
+    </button>
+      
+    <button class="btn btn-link d-btn-background"
             data-ng-class="mdView.current.index === 0 ? 'disabled' : ''"
             data-ng-show="mdView.records.length > 1"
             data-ng-click="previousRecord()">
       <i class="fa fa-angle-left"></i>
       <span data-translate="">previous</span>
     </button>
-    <button class="btn btn-link"
+    <button class="btn btn-link d-btn-background"
             data-ng-class="mdView.current.index === mdView.records.length-1 ? 'disabled' : ''"
             data-ng-show="mdView.records.length > 1"
             data-ng-click="nextRecord()">
@@ -461,24 +467,26 @@
                     <div class='row'>
                         <!-- the format at data-ng-click is very hackey... the default view somehow knows to fill in &uuid= instead of the &id= that was the result I got using the 'correct' way -->
                         <button class="btn btn-default col-md-4 col-md-push-1"
-                            data-ng-click="format({'label':'full','url':'md.format.xml?xsl=full_view&uuid='})">
+                            data-ng-click="Dfullview=false; format({'label':'full','url':'md.format.xml?xsl=full_view&uuid='});"
+                            >
                             <span data-translate="">Show all known metadata</span>
                         </button>
                         <button class="btn btn-default col-md-4 col-md-push-2"
                                 onclick="window.open('mailto:deltaresdata@deltares.nl', '_blank')">
                             <span data-translate="">Email us with feedback</span>
                         </button>
+                        
                     </div>
                 </div>
             </div>
             <!-- this is pure for development, all data that can be shown -->
-            <!-- div data-ng-class="user.@authenticated === true ? '' : 'invisible'" 
+            <div data-ng-class="user['@authenticated'] === 'true' ? '' : 'invisible'" 
                   style="color:white;">
                 <p onclick="$(this).next().toggle()" class="btn btn-default">Click for overview of all known data on this page for this record: {{mdView.current.record['geonet:info'].id}}</p>
                   <ul style="display:none;">
                       <li data-ng-repeat="(w, z) in mdView.current.record">{{w}} : {{z}}</li>
                   </ul>
-            </div -->
+            </div>
       </div>
         <div class="col-md-2 col-md-push-2 gn-record"
              data-ng-class="mdView.current.record.overviews.length > 0 ? '' : 'invisible'">
