@@ -29,21 +29,7 @@
  <!-- Comment out languages to hide them
  from language selector. -->
  <languages>
-     <ara/>
-     <cat/>
-     <chi/>
-     <dut/>
      <eng/>
-     <fin/>
-     <fre/>
-     <ger/>
-     <ita/>
-     <nor/>
-     <pol/>
-     <por/>
-     <rus/>
-     <spa/>
-     <tur/>
  </languages>
  
  

@@ -152,6 +152,7 @@ public class LocaleRedirects {
         }
 
         String userLang = langHeader.split("-|,", 2)[0].toLowerCase();
+        userLang = "en"; // Always use english.
 
         if (userLang.matches("^en")) {
             userLang = "eng";
