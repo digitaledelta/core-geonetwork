@@ -105,12 +105,10 @@
             <xsl:attribute name="data-label" select="$label"/>
           </div>
           <div class="col-lg-2 gn-control">
-            <xsl:if test="not($isDisabled)">
-              <xsl:call-template name="render-form-field-control-remove">
-                <xsl:with-param name="editInfo" select="$editInfo"/>
+            <xsl:call-template name="render-form-field-control-help">
+                <xsl:with-param name="editInfo" select="name(.)"/>
                 <xsl:with-param name="parentEditInfo" select="$parentEditInfo"/>
               </xsl:call-template>
-            </xsl:if>
           </div>
         </div>
       </xsl:when>
@@ -194,9 +192,9 @@
                 </xsl:call-template>
               </xsl:otherwise>
             </xsl:choose>
-            
-            
-            
+
+
+
             <xsl:call-template name="render-form-field-control-move">
               <xsl:with-param name="elementEditInfo" select="$parentEditInfo"/>
               <xsl:with-param name="domeElementToMoveRef" select="$editInfo/@ref"/>
@@ -219,12 +217,10 @@
             </xsl:if>
           </div>
           <div class="col-sm-1 gn-control">
-            <xsl:if test="not($isDisabled)">
-              <xsl:call-template name="render-form-field-control-remove">
-                <xsl:with-param name="editInfo" select="$editInfo"/>
+              <xsl:call-template name="render-form-field-control-help">
+                <xsl:with-param name="editInfo" select="$xpath"/>
                 <xsl:with-param name="parentEditInfo" select="$parentEditInfo"/>
               </xsl:call-template>
-            </xsl:if>
           </div>
         </div>
       </xsl:otherwise>
@@ -297,6 +293,7 @@
           <xsl:with-param name="elementEditInfo" select="$editInfo"/>
           <xsl:with-param name="domeElementToMoveRef" select="$editInfo/@ref"/>
         </xsl:call-template>
+
       </legend>
 
       <xsl:if test="count($attributesSnippet/*) > 0">
@@ -321,13 +318,13 @@
 
   <xsl:template name="render-boxed-element-control">
     <xsl:param name="editInfo"/>
-
-    <a class="btn pull-right"
-       data-gn-click-and-spin="remove({$editInfo/@ref}, {$editInfo/@parent})"
-       data-gn-field-highlight-remove="{$editInfo/@ref}"
-       title="{{{{'deleteFieldSet' | translate}}}}">
-      <i class="fa fa-times text-danger"/>
-    </a>
+    <!-- don't allow removing elements. -->
+    <!--<a class="btn pull-right"-->
+       <!--data-gn-click-and-spin="remove({$editInfo/@ref}, {$editInfo/@parent})"-->
+       <!--data-gn-field-highlight-remove="{$editInfo/@ref}"-->
+       <!--title="{{{{'deleteFieldSet' | translate}}}}">-->
+      <!--<i class="fa fa-times text-danger"/>-->
+    <!--</a>-->
   </xsl:template>
   
   
@@ -567,13 +564,11 @@
           </xsl:if>
         </div>
       </div>
-      <xsl:if test="$refToDelete">
         <div class="col-sm-1 gn-control">
-          <xsl:call-template name="render-form-field-control-remove">
-            <xsl:with-param name="editInfo" select="$refToDelete"/>
+          <xsl:call-template name="render-form-field-control-help">
+            <xsl:with-param name="editInfo" select="xpath"/>
           </xsl:call-template>
         </div>
-      </xsl:if>
     </div>
   </xsl:template>
 
@@ -715,6 +710,7 @@
           </xsl:choose>
         </div>
       </div>
+
     </xsl:if>
   </xsl:template>
 
@@ -1014,29 +1010,20 @@
   if parent info is not defined and element is not 
   mandatory. 
   -->
-  <xsl:template name="render-form-field-control-remove">
+  <xsl:template name="render-form-field-control-help">
     <xsl:param name="editInfo"/>
     <xsl:param name="parentEditInfo" required="no"/>
-    <xsl:if
-      test="($parentEditInfo and 
-                     ($parentEditInfo/@del = 'true' or 
-                     $parentEditInfo/@min != 1)
-                   ) or 
-                   (not($parentEditInfo) and ($editInfo and 
-                   ($editInfo/@del = 'true' or 
-                   $editInfo/@min != 1)
-                   ))">
-      
-      <xsl:variable name="elementToRemove" select="if ($parentEditInfo) then 
-        $parentEditInfo else $editInfo"/>
+    <a class="btn pull-right" data-toggle="tooltip" data-placement="top" title="Help" data-gn-field-help-tooltip="{$editInfo}" >
+      <i class="fa fa-question-circle"/>
+    </a>
 
-      <a class="btn pull-right"
-         data-gn-click-and-spin="remove({$elementToRemove/@ref}, {$elementToRemove/@parent}, {$editInfo/@ref})"
-         data-gn-field-highlight-remove="{$editInfo/@ref}"
-         data-toggle="tooltip" data-placement="top" title="{{{{'deleteField' | translate}}}}">
-        <i class="fa fa-times text-danger gn-control"/>
-      </a>
-    </xsl:if>
+    <!--<a class="btn pull-right"-->
+         <!--data-gn-click-and-spin="remove({$elementToRemove/@ref}, {$elementToRemove/@parent}, {$editInfo/@ref})"-->
+         <!--data-gn-field-highlight-remove="{$editInfo/@ref}"-->
+         <!--data-toggle="tooltip" data-placement="top" title="{{{{'deleteField' | translate}}}}">-->
+        <!--<i class="fa fa-times text-danger gn-control"/>-->
+      <!--</a>-->
+
   </xsl:template>
 
 

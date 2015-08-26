@@ -396,6 +396,8 @@
 		<label>Resolution</label>
 		<description>Level of detail expressed as a scale factor or a ground distance</description>
 	</element>
+
+
 	<element name="gmd:MD_ScopeDescription" id="149.0">
 		<label>Scope description</label>
 		<description>Description of the class of information covered by the
@@ -1237,7 +1239,7 @@
 		<condition>mandatory</condition>
 	</element>
 	<element name="gmd:individualName" id="375.0">
-		<label>Individual name</label>
+		<label>Name</label>
 		<description>Name of the responsible person- surname, given name, title separated by a
             delimiter</description>
 		<_condition>Conditional / organisationName and positionName not documented?</_condition>
@@ -1776,9 +1778,10 @@
 		<description>General instructions, terms and services provided by the
             distributor</description>
 	</element>
+
 	<element name="gmd:organisationName" id="376.0">
-		<label>Organisation name</label>
-		<description>Name of the responsible organization</description>
+		<label>E-mail address</label>
+		<description>E-mail address</description>
 		<condition>conditional</condition>
 	</element>
 	<element name="gmd:orientationParameterAvailability" id="172.0">
@@ -3020,7 +3023,7 @@
         <label>Realization epoch</label>
     </element>
     <element name="gmd:MD_ProgressCode">
-        <label>Progress</label>
+        <label>Validated</label>
     </element>
     <element name="gmd:MD_MaintenanceFrequencyCode">
         <label>Maintenance Frequency</label>

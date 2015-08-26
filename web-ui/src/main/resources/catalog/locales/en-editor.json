@@ -11,7 +11,7 @@
     "addFromThesaurus": "or select them in a thesaurus",
     "addKeywordNotFromThesaurus": "Add new keywords",
     "addLinks": "Add links",
-    "addOnlinesrc": "Add an online resource",
+    "addOnlinesrc": "Datasets (Download/Links)",
     "addOnlinesrcTitle": "Link an online resource to the current metadata",
     "addThumbnail": "Add a thumbnail",
     "addThumbnailTitle": "Add an overview to the current metadata",
@@ -195,5 +195,22 @@
     "minorEdit": "Minor edit",
     "notEvaluated": "Not evaluated",
     "notConformant": "Not conformant",
-    "conformant": "Conformant"
+    "conformant": "Conformant",
+    "/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:individualName": "Name of the person adding the metadata",
+    "/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:organisationName": "E-mail address of the person who entered the metadata",
+
+    "/gmd:CI_ResponsibleParty/gmd:role": "Role of the user who entered the metadata.",
+    "/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title": "Title of the dataset; be as specific as possible, the user should be able to know in general what the dataset contains. ",
+    "/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType": "Date the metadata was published",
+    "/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract": "Description of the dataset in max. 200 words",
+    "/gmd:MD_DataIdentification/gmd:status": "Is this is a validated dataset?",
+    "/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualName": "Who should be contacted for questions about the dataset",
+    "/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:organisationName": "E-mail address of the person to ask for the data",
+    "/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:role": "Role of the user that should be contacted for information about the data",
+    "/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword": "Describe the most important aspects of the data, useful for finding it; for example the file format ('netcdf', 'shapefile') or theme ('elevation', 'marine'), etc.",
+    "/gmd:MD_DataIdentification/gmd:language": "Language of the dataset",
+    "/gmd:MD_DataIdentification/gmd:topicCategory": "Topic category of the metadata",
+    "/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:TimePeriodTypeCHOICE_ELEMENT2/gml:beginPosition": "The temporal extent of the data in the dataset. For measurements this would be the period in which the measurements were performed. If there is no time period but only a time stamp, use the same start- and enddate.",
+    "/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent/gmd:extent/gml:TimePeriod/gml:TimePeriodTypeCHOICE_ELEMENT3/gml:endPosition": "The temporal extent of the data in the dataset. For measurements this would be the period in which the measurements were performed. If there is no time period but only a time stamp, use the same start- and enddate."
+
 }

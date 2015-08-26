@@ -16,15 +16,17 @@
 
     <xsl:variable name="currentView" select="$config/editor/views/view[tab/@id = $tab]"/>
 
-    <div class="gn-scroll-spy"
-      data-gn-scroll-spy="gn-editor-{$metadataId}"
-      data-watch=""
-      data-all-depth="{if ($isFlatMode) then 'true' else 'false'}"/>
+    <!-- scroll spy disabled -->
+    <!--<div class="gn-scroll-spy"-->
+      <!--data-gn-scroll-spy="gn-editor-{$metadataId}"-->
+      <!--data-watch=""-->
+      <!--data-all-depth="{if ($isFlatMode) then 'true' else 'false'}"/>-->
 
+    <!-- TODO: Remove the different views. Only the default view should be used. -->
     <ul class="nav nav-tabs">
       <!-- Make a drop down choice to swith to one view to another -->
       <li class="dropdown" id="gn-view-menu-{$metadataId}">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="" 
+        <a class="dropdown-toggle" data-toggle="dropdown" href=""
           title="{$i18n/selectView}">
           <i class="fa fa-eye"></i>
           <b class="caret"/>
@@ -113,7 +115,7 @@
                   </li>
                 </xsl:if>
               </xsl:for-each>
-              
+
               <li class="divider"/>
               <li>
                 <a data-ng-click="toggleAttributes(true)" href="">
@@ -133,19 +135,19 @@
           </xsl:choose>
         </ul>
       </li>
-      
-      
+
+
       <!-- Make a tab switcher for all tabs of the current view -->
       <xsl:if test="count($currentView/tab) > 1">
         <xsl:apply-templates mode="menu-builder"
           select="$config/editor/views/view[tab/@id = $tab]/tab[not(@toggle)]"/>
-        
-        
-        
+
+
+
         <!-- Some views may define tab to be grouped in an extra button -->
         <xsl:if test="count($config/editor/views/view[tab/@id = $tab]/tab[@toggle]) > 0">
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="" 
+            <a class="dropdown-toggle" data-toggle="dropdown" href=""
               title="{$i18n/moreTabs}">
               <i class="fa fa-ellipsis-h"></i>
               <b class="caret"/>
@@ -159,7 +161,7 @@
                   </xsl:if>
                   <a href="">
                     <xsl:if test="$tab != @id">
-                      <xsl:attribute name="data-ng-click" 
+                      <xsl:attribute name="data-ng-click"
                         select="concat('switchToTab(''', @id, ''', ''', @mode, ''')')"/>
                     </xsl:if>
                     <xsl:variable name="tabId" select="@id"/>
@@ -171,7 +173,7 @@
           </li>
         </xsl:if>
       </xsl:if>
-      
+
     </ul>
   </xsl:template>
 
