@@ -23,6 +23,8 @@
       <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '')"/>
       <xsl:with-param name="name" select="''"/>
       <xsl:with-param name="editInfo" select="*/gn:element"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
+
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
       <xsl:with-param name="isDisabled" select="true()"/>
     </xsl:call-template>
@@ -57,6 +59,8 @@
       <xsl:with-param name="xpath" select="$xpath"/>
       <xsl:with-param name="type" select="gn-fn-iso19139:getCodeListType(name())"/>
       <xsl:with-param name="editInfo" select="*/gn:element"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
+
       <xsl:with-param name="listOfValues"
         select="gn-fn-metadata:getCodeListValues($schema, name(gmd:*), $codelists)"/>
     </xsl:call-template>
@@ -95,6 +99,8 @@
       <xsl:with-param name="xpath" select="$xpath"/>
       <xsl:with-param name="directive" select="'gn-field-duration'"/>
       <xsl:with-param name="editInfo" select="gn:element"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
+
       <xsl:with-param name="parentEditInfo" select="../gn:element"/>
     </xsl:call-template>
 
@@ -146,6 +152,7 @@
       <xsl:with-param name="type"
         select="if (string-length($value) = 10 or $value = '') then 'date' else 'datetime'"/>
       <xsl:with-param name="editInfo" select="gn:element"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
       <xsl:with-param name="attributesSnippet" select="$attributes"/>
     </xsl:call-template>
   </xsl:template>
@@ -161,6 +168,7 @@
       <xsl:with-param name="label"
         select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)/label"/>
       <xsl:with-param name="editInfo" select="gn:element"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
       <xsl:with-param name="cls" select="local-name()"/>
       <xsl:with-param name="subTreeSnippet">
         <div gn-draw-bbox="" data-hleft="{gmd:westBoundLongitude/gco:Decimal}"

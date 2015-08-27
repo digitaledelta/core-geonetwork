@@ -44,7 +44,8 @@
     <xsl:param name="hidden" required="no" as="xs:boolean" select="false()"/>
     <xsl:param name="editInfo" required="no"/>
     <xsl:param name="parentEditInfo" required="no"/>
-    
+    <xsl:param name="isDeleteDisabled" required="no"/>
+
     <!-- The fields matching all element attributes.
     Rendered hidden in a block below the input. -->
     <xsl:param name="attributesSnippet" required="no"/>
@@ -106,8 +107,10 @@
           </div>
           <div class="col-lg-2 gn-control">
             <xsl:call-template name="render-form-field-control-help">
-                <xsl:with-param name="editInfo" select="name(.)"/>
-                <xsl:with-param name="parentEditInfo" select="$parentEditInfo"/>
+              <xsl:with-param name="editInfo" select="$editInfo"/>
+                <xsl:with-param name="tooltipInfo" select="name(.)"/>
+              <xsl:with-param name="isDeleteDisabled" select="$isDeleteDisabled"/>
+              <xsl:with-param name="parentEditInfo" select="$parentEditInfo"/>
               </xsl:call-template>
           </div>
         </div>
@@ -146,7 +149,7 @@
                     <xsl:with-param name="type" select="$type"/>
                     <xsl:with-param name="tooltip" select="$tooltip"/>
                     <xsl:with-param name="isRequired" select="$isRequired"/>
-                    <xsl:with-param name="isDisabled" select="$isDisabled"/>
+                    <xsl:with-param name="isDeleteDisabled" select="$isDeleteDisabled"/>
                     <xsl:with-param name="editInfo" select="$editInfo"/>
                     <xsl:with-param name="parentEditInfo" select="$parentEditInfo"/>
                     <!--  Helpers can't be provided for all languages
@@ -185,7 +188,7 @@
                   <xsl:with-param name="type" select="$type"/>
                   <xsl:with-param name="tooltip" select="concat($schema, '|', name(.), '|', name(..), '|', $xpath)"/>
                   <xsl:with-param name="isRequired" select="$isRequired"/>
-                  <xsl:with-param name="isDisabled" select="$isDisabled"/>
+                  <xsl:with-param name="isDeleteDisabled" select="$isDeleteDisabled"/>
                   <xsl:with-param name="editInfo" select="$editInfo"/>
                   <xsl:with-param name="parentEditInfo" select="$parentEditInfo"/>
                   <xsl:with-param name="listOfValues" select="$listOfValues"/>
@@ -218,7 +221,9 @@
           </div>
           <div class="col-sm-1 gn-control">
               <xsl:call-template name="render-form-field-control-help">
-                <xsl:with-param name="editInfo" select="$xpath"/>
+                <xsl:with-param name="isDeleteDisabled" select="$isDeleteDisabled"/>
+                <xsl:with-param name="tooltipInfo" select="$xpath"/>
+                <xsl:with-param name="editInfo" select="$editInfo"/>
                 <xsl:with-param name="parentEditInfo" select="$parentEditInfo"/>
               </xsl:call-template>
           </div>
@@ -248,6 +253,8 @@
     <xsl:param name="value"/>
     <xsl:param name="errors" required="no"/>
     <xsl:param name="editInfo" required="no"/>
+    <xsl:param name="isDeleteDisabled" required="no"/>
+
     <!-- The content to put into the box -->
     <xsl:param name="subTreeSnippet" required="yes" as="node()"/>
     <!-- cls may define custom CSS class in order to activate
@@ -258,7 +265,6 @@
     <xsl:param name="xpath" required="no"/>
     <xsl:param name="attributesSnippet" required="no"><null/></xsl:param>
     <xsl:param name="isDisabled" select="ancestor::node()[@xlink:href]"/>
-
 
     <xsl:variable name="hasXlink" select="@xlink:href"/>
 
@@ -285,6 +291,8 @@
         <xsl:if test="$editInfo and not($isDisabled)">
           <xsl:call-template name="render-boxed-element-control">
             <xsl:with-param name="editInfo" select="$editInfo"/>
+            <xsl:with-param name="isDeleteDisabled" select="$isDeleteDisabled"/>
+
           </xsl:call-template>
         </xsl:if>
         
@@ -318,13 +326,18 @@
 
   <xsl:template name="render-boxed-element-control">
     <xsl:param name="editInfo"/>
-    <!-- don't allow removing elements. -->
+    <xsl:param name="isDeleteDisabled"/>
+
+    <xsl:if test="not($isDeleteDisabled)">
+      <!-- todo make configurable -->
+      <!-- -->
     <!--<a class="btn pull-right"-->
        <!--data-gn-click-and-spin="remove({$editInfo/@ref}, {$editInfo/@parent})"-->
        <!--data-gn-field-highlight-remove="{$editInfo/@ref}"-->
        <!--title="{{{{'deleteFieldSet' | translate}}}}">-->
       <!--<i class="fa fa-times text-danger"/>-->
     <!--</a>-->
+    </xsl:if>
   </xsl:template>
   
   
@@ -335,6 +348,7 @@
     <xsl:param name="name"/>
     <xsl:param name="template"/>
     <xsl:param name="isExisting"/>
+    <xsl:param name="isDeleteDisabled"/>
     <xsl:param name="id"/>
     <xsl:param name="xpathFieldId" required="no" select="''"/>
     <xsl:param name="keyValues" required="no"/>
@@ -566,7 +580,9 @@
       </div>
         <div class="col-sm-1 gn-control">
           <xsl:call-template name="render-form-field-control-help">
-            <xsl:with-param name="editInfo" select="xpath"/>
+            <xsl:with-param name="isDeleteDisabled" select="$isDeleteDisabled"/>
+            <xsl:with-param name="tooltipInfo" select="xpath"/>
+            <xsl:with-param name="editInfo" select="$refToDelete"/>
           </xsl:call-template>
         </div>
     </div>
@@ -728,6 +744,7 @@
     <xsl:param name="tooltip" required="no"/>
     <xsl:param name="isRequired"/>
     <xsl:param name="isDisabled"/>
+    <xsl:param name="isDeleteDisabled"/>
     <xsl:param name="editInfo"/>
     <xsl:param name="parentEditInfo"/>
     <xsl:param name="checkDirective" select="$isRequired"/>
@@ -1012,11 +1029,38 @@
   -->
   <xsl:template name="render-form-field-control-help">
     <xsl:param name="editInfo"/>
+    <xsl:param name="tooltipInfo"/>
+    <xsl:param name="isDeleteDisabled"/>
+
     <xsl:param name="parentEditInfo" required="no"/>
-    <a class="btn pull-right" data-toggle="tooltip" data-placement="top" title="Help" data-gn-field-help-tooltip="{$editInfo}" >
+
+    <!-- Render help tooltip -->
+    <a class="btn pull-right" data-toggle="tooltip" data-placement="top" title="Help" data-gn-field-help-tooltip="{$tooltipInfo}" >
       <i class="fa fa-question-circle"/>
     </a>
+    <xsl:if
+            test="($parentEditInfo and
+                     ($parentEditInfo/@del = 'true' or
+                     $parentEditInfo/@min != 1)
+                   ) or
+                   (not($parentEditInfo) and ($editInfo and
+                   ($editInfo/@del = 'true' or
+                   $editInfo/@min != 1)
+                   ))">
 
+    <xsl:variable name="elementToRemove" select="if ($parentEditInfo) then
+        $parentEditInfo else $editInfo"/>
+
+      <xsl:if test="not($isDeleteDisabled)">
+        <!--todo make configurable.-->
+      <!--<a class="btn pull-right"-->
+         <!--data-gn-click-and-spin="remove({$elementToRemove/@ref}, {$elementToRemove/@parent}, {$editInfo/@ref})"-->
+         <!--data-gn-field-highlight-remove="{$editInfo/@ref}"-->
+         <!--data-toggle="tooltip" data-placement="top" title="{{{{'deleteField' | translate}}}}">-->
+        <!--<i class="fa fa-times text-danger gn-control"/>-->
+      <!--</a>-->
+      </xsl:if>
+    </xsl:if>
     <!--<a class="btn pull-right"-->
          <!--data-gn-click-and-spin="remove({$elementToRemove/@ref}, {$elementToRemove/@parent}, {$editInfo/@ref})"-->
          <!--data-gn-field-highlight-remove="{$editInfo/@ref}"-->

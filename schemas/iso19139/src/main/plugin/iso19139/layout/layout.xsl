@@ -354,6 +354,7 @@
       <xsl:with-param name="name"
         select="if ($isEditing) then concat(*/gn:element/@ref, '_codeListValue') else ''"/>
       <xsl:with-param name="editInfo" select="*/gn:element"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
       <xsl:with-param name="parentEditInfo" select="gn:element"/>
       <xsl:with-param name="listOfValues"
         select="gn-fn-metadata:getCodeListValues($schema, name(*[@codeListValue]), $codelists, .)"/>
@@ -387,6 +388,7 @@
       <xsl:with-param name="type" select="gn-fn-iso19139:getCodeListType(name())"/>
       <xsl:with-param name="name" select="gn:element/@ref"/>
       <xsl:with-param name="editInfo" select="*/gn:element"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
       <xsl:with-param name="listOfValues"
         select="gn-fn-metadata:getCodeListValues($schema, name(), $codelists, .)"/>
     </xsl:call-template>
@@ -409,6 +411,7 @@
       <xsl:with-param name="xpath" select="gn-fn-metadata:getXPath(.)"/>
       <xsl:with-param name="type" select="gn-fn-metadata:getFieldType($editorConfig, name(), '')"/>
       <xsl:with-param name="name" select="if ($isEditing) then gn:element/@ref else ''"/>
+      <xsl:with-param name="isDeleteDisabled" select="true()"/>
       <xsl:with-param name="editInfo"
         select="gn:element"/>
       <xsl:with-param name="listOfValues" select="$helper"/>

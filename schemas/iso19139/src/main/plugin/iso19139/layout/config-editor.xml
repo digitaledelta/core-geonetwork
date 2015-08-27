@@ -229,13 +229,14 @@
   <!-- View configuration -->
   <views>
   <view name="default">
-      <tab id="default" default="true" mode="flat">
+      <tab id="default" default="true" mode="flat" >
         <section name="gmd:MD_Metadata">
           <field xpath="/gmd:MD_Metadata/gmd:contact" or="contact" in="/gmd:MD_Metadata"/>
+          <!--<field xpath="/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress"-->
+                 <!--or="email" in="/gmd:MD_Metadata"/>-->
         </section>
 
         <section xpath="/gmd:MD_Metadata/gmd:identificationInfo" />
-
         <!--<section xpath="/gmd:MD_Metadata/gmd:distributionInfo"/>-->
         <!--<section xpath="/gmd:MD_Metadata/gmd:dataQualityInfo"/>-->
       </tab>
