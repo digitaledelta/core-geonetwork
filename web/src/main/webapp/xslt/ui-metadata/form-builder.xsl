@@ -75,6 +75,7 @@
 
     <xsl:variable name="isMultilingual" select="count($value/values) > 0"/>
 
+
     <!-- Required status is defined in parent element for
     some profiles like ISO19139. If not set, the element
     editing information is used. 
@@ -326,17 +327,16 @@
 
   <xsl:template name="render-boxed-element-control">
     <xsl:param name="editInfo"/>
-    <xsl:param name="isDeleteDisabled"/>
+    <xsl:param name="isDeleteDisabled" required="no"/>
 
     <xsl:if test="not($isDeleteDisabled)">
-      <!-- todo make configurable -->
-      <!-- -->
-    <!--<a class="btn pull-right"-->
-       <!--data-gn-click-and-spin="remove({$editInfo/@ref}, {$editInfo/@parent})"-->
-       <!--data-gn-field-highlight-remove="{$editInfo/@ref}"-->
-       <!--title="{{{{'deleteFieldSet' | translate}}}}">-->
-      <!--<i class="fa fa-times text-danger"/>-->
-    <!--</a>-->
+
+    <a class="btn pull-right"
+       data-gn-click-and-spin="remove({$editInfo/@ref}, {$editInfo/@parent})"
+       data-gn-field-highlight-remove="{$editInfo/@ref}"
+       title="{{{{'deleteFieldSet' | translate}}}}">
+      <i class="fa fa-times text-danger"/>
+    </a>
     </xsl:if>
   </xsl:template>
   
@@ -1030,7 +1030,7 @@
   <xsl:template name="render-form-field-control-help">
     <xsl:param name="editInfo"/>
     <xsl:param name="tooltipInfo"/>
-    <xsl:param name="isDeleteDisabled"/>
+    <xsl:param name="isDeleteDisabled" required="no"/>
 
     <xsl:param name="parentEditInfo" required="no"/>
 
@@ -1053,12 +1053,12 @@
 
       <xsl:if test="not($isDeleteDisabled)">
         <!--todo make configurable.-->
-      <!--<a class="btn pull-right"-->
-         <!--data-gn-click-and-spin="remove({$elementToRemove/@ref}, {$elementToRemove/@parent}, {$editInfo/@ref})"-->
-         <!--data-gn-field-highlight-remove="{$editInfo/@ref}"-->
-         <!--data-toggle="tooltip" data-placement="top" title="{{{{'deleteField' | translate}}}}">-->
-        <!--<i class="fa fa-times text-danger gn-control"/>-->
-      <!--</a>-->
+      <a class="btn pull-right"
+         data-gn-click-and-spin="remove({$elementToRemove/@ref}, {$elementToRemove/@parent}, {$editInfo/@ref})"
+         data-gn-field-highlight-remove="{$editInfo/@ref}"
+         data-toggle="tooltip" data-placement="top" title="{{{{'deleteField' | translate}}}}">
+        <i class="fa fa-times text-danger gn-control"/>
+      </a>
       </xsl:if>
     </xsl:if>
     <!--<a class="btn pull-right"-->
@@ -1117,7 +1117,7 @@
   -->
   <xsl:template mode="render-for-field-for-attribute" match="@*">
     <xsl:param name="ref"/>
-    
+    <xsl:param name="isDeleteDisabled" required="no"/>
     <xsl:variable name="attributeName" select="name()"/>
     <xsl:variable name="attributeValue" select="."/>
     <xsl:variable name="attributeSpec" select="../gn:attribute[@name = $attributeName]"/>
@@ -1166,12 +1166,14 @@
           </xsl:otherwise>
         </xsl:choose>
       </div>
+      <xsl:if test="not($isDeleteDisabled)">
       <div class="col-sm-1">
         <a class="btn pull-right"
            data-gn-click-and-spin="removeAttribute('{$fieldName}')" data-toggle="tooltip" data-placement="top" title="{{{{'deleteField' | translate}}}}">
           <i class="fa fa-times text-danger"/>
         </a>
       </div>
+      </xsl:if>
     </div>
   </xsl:template>
   

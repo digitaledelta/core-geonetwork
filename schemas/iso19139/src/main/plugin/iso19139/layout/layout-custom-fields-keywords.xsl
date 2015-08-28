@@ -11,6 +11,7 @@
                 xmlns:gn-fn-metadata="http://geonetwork-opensource.org/xsl/functions/metadata"
                 exclude-result-prefixes="#all">
 
+
   <!-- Custom rendering of keyword section 
     * gmd:descriptiveKeywords is boxed element and the title 
     of the fieldset is the thesaurus title

@@ -47,7 +47,7 @@
         defaultLang: 'eng',
         pages: {
           editor: {
-            eng: 'eng/users/quickstartguide/new_metadata/index.html',
+            eng: 'eng/users/user-guide/describing-information/index.html',
             fre: 'fra/users/editor/index.html'
           },
           editor_sharing: {

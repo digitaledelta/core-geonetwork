@@ -9,6 +9,7 @@
   xmlns:gml="http://www.opengis.net/gml"
   xmlns:xlink="http://www.w3.org/1999/xlink">
 
+
   <!-- Form field type configuration. Default is text. -->
   <fields>
     <for name="gmd:abstract" use="textarea"/>
@@ -55,36 +56,36 @@
     <for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>
 
 
-    <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
-      <directiveAttributes
-              data-template-add-action="true"
-              data-template-type="contact"
-              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
-    </for>
-    <for name="gmd:pointOfContact" addDirective="data-gn-directory-entry-selector">
-      <directiveAttributes
-              data-template-add-action="true"
-              data-template-type="contact"
-              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
-    </for>
-    <for name="gmd:distributorContact" addDirective="data-gn-directory-entry-selector">
-      <directiveAttributes
-              data-template-add-action="true"
-              data-template-type="contact"
-              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
-    </for>
-    <for name="gmd:processor" addDirective="data-gn-directory-entry-selector">
-      <directiveAttributes
-              data-template-add-action="true"
-              data-template-type="contact"
-              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
-    </for>
-    <for name="gmd:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">
-      <directiveAttributes
-              data-template-add-action="true"
-              data-template-type="contact"
-              data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
-    </for>
+    <!--<for name="gmd:contact" addDirective="data-gn-directory-entry-selector">-->
+      <!--<directiveAttributes-->
+              <!--data-template-add-action="true"-->
+              <!--data-template-type="contact"-->
+              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
+    <!--</for>-->
+    <!--<for name="gmd:pointOfContact" addDirective="data-gn-directory-entry-selector">-->
+      <!--<directiveAttributes-->
+              <!--data-template-add-action="true"-->
+              <!--data-template-type="contact"-->
+              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
+    <!--</for>-->
+    <!--<for name="gmd:distributorContact" addDirective="data-gn-directory-entry-selector">-->
+      <!--<directiveAttributes-->
+              <!--data-template-add-action="true"-->
+              <!--data-template-type="contact"-->
+              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
+    <!--</for>-->
+    <!--<for name="gmd:processor" addDirective="data-gn-directory-entry-selector">-->
+      <!--<directiveAttributes-->
+              <!--data-template-add-action="true"-->
+              <!--data-template-type="contact"-->
+              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
+    <!--</for>-->
+    <!--<for name="gmd:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">-->
+      <!--<directiveAttributes-->
+              <!--data-template-add-action="true"-->
+              <!--data-template-type="contact"-->
+              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
+    <!--</for>-->
 
 
     <!-- Example configuration: Add onLine source from subtemplate
@@ -95,7 +96,7 @@
               data-filter='{"_root": "gmd:CI_OnlineResource"}'/>
     </for>
     -->
-    <for name="gmd:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">
+    <!--<for name="gmd:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">-->
       <!--
       Example of configuration to disable free text keywords in the thesaurus selector
       <directiveAttributes data-allow-free-text-keywords="false" />
@@ -104,7 +105,7 @@
       for the directive.
       <directiveAttributes data-include="external.theme.inspire-theme,external.place.regions"/>
       -->
-    </for>
+    <!--</for>-->
   </fields>
 
 
