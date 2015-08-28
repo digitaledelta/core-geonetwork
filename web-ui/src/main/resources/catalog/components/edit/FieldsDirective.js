@@ -293,8 +293,7 @@
    <example>
    <file name="index.html">
    <label for="gn-field-3"
-   data-gn-field-help-tooltip="iso19139|gmd:fileIdentifier|gmd:MD_Metadata|
-   /gmd:MD_Metadata/gmd:fileIdentifier"
+   data-gn-field-help-tooltip="/gmd:MD_Metadata/gmd:fileIdentifier"
    data-placement="left">File identifier</label>
    </file>
    </example>
@@ -312,7 +311,7 @@
               if (!isInitialized)
                 {
                 // Retrieve field information (there is a cache)
-                      var html = $translate(attrs.gnFieldHelpTooltip);
+                      var html = $translate('tooltip-help|' + attrs.gnFieldHelpTooltip);
                       //html = attrs.gnFieldHelpTooltip;
 
                         // Right same width as field
@@ -376,5 +375,44 @@
         };
       }]);
 
+
+  /**
+   * @ngdoc directive
+   * @name gn_fields.directive:gnFieldLabel
+   * @function
+   *
+   * @description
+   * Get a custom field label based on the xpath.
+   *
+   *
+   *
+   * @param {string} gnFieldLabel The tooltip configuration
+   *  which identified the XPath expression.
+   **
+   *
+   * @example
+   <example>
+   <file name="index.html">
+   <label for="gn-field-3"
+   data-gn-field-label="/gmd:MD_Metadata/gmd:fileIdentifier"
+   data-placement="left">File identifier</label>
+   </file>
+   </example>
+   */
+
+  module.directive('gnFieldLabel', ['$translate', function ($translate) {
+    return {
+      restrict: 'A',
+      scope: true,
+      template: '<div>{{processedLabel}}</div>',
+      link: function (scope, elem, attrs) {
+          scope.$apply(function () {
+            alert(attrs.gnFieldLabel);
+            scope.processedLabel = $translate('field-label|' + attrs.gnFieldLabel);
+          });
+      }
+    };
+
+  }]);
 
 })();

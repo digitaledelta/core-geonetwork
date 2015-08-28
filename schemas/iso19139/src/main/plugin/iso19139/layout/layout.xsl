@@ -98,7 +98,7 @@
         <xsl:with-param name="insertRef" select="gn:element/@ref"/>
         <xsl:with-param name="isDeleteDisabled" select="true()"/>
 
-        {if ($viewConfig/@name = 'default') then 'true' else 'false'}
+        <!--{if ($viewConfig/@name = 'default') then 'true' else 'false'}-->
 
       </xsl:apply-templates>
     </xsl:variable>
@@ -211,8 +211,19 @@
       <xsl:variable name="xpath" select="gn-fn-metadata:getXPath(.)"/>-->
     <xsl:variable name="xpath" select="gn-fn-metadata:getXPathByRef(gn:element/@ref, $metadata, false())"/>
     <xsl:variable name="isoType" select="if (../@gco:isoType) then ../@gco:isoType else ''"/>
-    <xsl:variable name="labelConfig"
-      select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+    <xsl:variable name="labelConfig1"
+                  select="gn-fn-metadata:getLabel($schema, $xpath, $labels, name(..), $isoType, $xpath)"/>
+    <xsl:variable name="labelConfig2"
+                  select="gn-fn-metadata:getLabel($schema, name(), $labels, name(..), $isoType, $xpath)"/>
+
+    <xsl:variable name="labelConfig">
+      <xsl:choose>
+        <xsl:when test="$labelConfig1">$labelConfig1</xsl:when>
+        <xsl:when test="$labelConfig2">$labelConfig2</xsl:when>
+      </xsl:choose>
+    </xsl:variable>
+
+
     <xsl:variable name="helper" select="gn-fn-metadata:getHelper($labelConfig/helper, .)"/>
 
     <xsl:variable name="attributes">
@@ -407,7 +418,8 @@
   <xsl:template mode="mode-iso19139" priority="100" match="gml:*[count(.//gn:element) = 1]">
     <xsl:variable name="name" select="name(.)"/>
 
-    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, $name, $labels)"/>
+    <xsl:variable name="labelConfig" select="gn-fn-metadata:getLabel($schema, '', '', '', $xpath)"/>
+
     <xsl:variable name="helper" select="gn-fn-metadata:getHelper($labelConfig/helper, .)"/>
 
     <xsl:variable name="added" select="parent::node()/parent::node()/@gn:addedObj"/>

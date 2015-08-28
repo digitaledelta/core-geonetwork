@@ -124,9 +124,8 @@
           <label
               for="gn-field-{$editInfo/@ref}"
               class="col-sm-2 control-label">
-            <xsl:value-of select="$label"/>
+              <xsl:value-of select="$label"/>
           </label>
-
           <div class="col-sm-9 gn-value">
             <xsl:if test="$isMultilingual">
               <xsl:attribute name="data-gn-multilingual-field" select="$metadataOtherLanguagesAsJson"/>
