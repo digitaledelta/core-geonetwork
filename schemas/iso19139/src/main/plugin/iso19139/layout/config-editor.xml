@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="../../config-editor.xsd"
-  xmlns:gn="http://www.fao.org/geonetwork"
-  xmlns:gco="http://www.isotc211.org/2005/gco"
-  xmlns:gmd="http://www.isotc211.org/2005/gmd"
-  xmlns:gmx="http://www.isotc211.org/2005/gmx"
-  xmlns:srv="http://www.isotc211.org/2005/srv"
-  xmlns:gml="http://www.opengis.net/gml"
-  xmlns:xlink="http://www.w3.org/1999/xlink">
+        xsi:noNamespaceSchemaLocation="../../config-editor.xsd"
+        xmlns:gn="http://www.fao.org/geonetwork"
+        xmlns:gco="http://www.isotc211.org/2005/gco"
+        xmlns:gmd="http://www.isotc211.org/2005/gmd"
+        xmlns:gmx="http://www.isotc211.org/2005/gmx"
+        xmlns:srv="http://www.isotc211.org/2005/srv"
+        xmlns:gml="http://www.opengis.net/gml"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
 
 
   <!-- Form field type configuration. Default is text. -->
@@ -41,7 +41,8 @@
     <for name="gco:Date" use="data-gn-date-picker"/>
     <for name="gco:DateTime" use="data-gn-date-picker"/>
 
-
+    <for name="gml:beginPosition" use="data-gn-date-picker"/>
+    <for name="gml:endPosition" use="data-gn-date-picker"/>
 
     <!-- gmx:FileName/@src attribute -->
     <for name="src" use="data-gn-logo-selector"/>
@@ -56,56 +57,56 @@
     <for name="gmd:referenceSystemInfo" addDirective="data-gn-crs-selector"/>
 
 
-    <!--<for name="gmd:contact" addDirective="data-gn-directory-entry-selector">-->
-      <!--<directiveAttributes-->
-              <!--data-template-add-action="true"-->
-              <!--data-template-type="contact"-->
-              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
-    <!--</for>-->
-    <!--<for name="gmd:pointOfContact" addDirective="data-gn-directory-entry-selector">-->
-      <!--<directiveAttributes-->
-              <!--data-template-add-action="true"-->
-              <!--data-template-type="contact"-->
-              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
-    <!--</for>-->
-    <!--<for name="gmd:distributorContact" addDirective="data-gn-directory-entry-selector">-->
-      <!--<directiveAttributes-->
-              <!--data-template-add-action="true"-->
-              <!--data-template-type="contact"-->
-              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
-    <!--</for>-->
-    <!--<for name="gmd:processor" addDirective="data-gn-directory-entry-selector">-->
-      <!--<directiveAttributes-->
-              <!--data-template-add-action="true"-->
-              <!--data-template-type="contact"-->
-              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
-    <!--</for>-->
-    <!--<for name="gmd:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">-->
-      <!--<directiveAttributes-->
-              <!--data-template-add-action="true"-->
-              <!--data-template-type="contact"-->
-              <!--data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>-->
-    <!--</for>-->
+    <for name="gmd:contact" addDirective="data-gn-directory-entry-selector">
+    <directiveAttributes
+    data-template-add-action="true"
+    data-template-type="contact"
+    data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:pointOfContact" addDirective="data-gn-directory-entry-selector">
+    <directiveAttributes
+    data-template-add-action="true"
+    data-template-type="contact"
+    data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:distributorContact" addDirective="data-gn-directory-entry-selector">
+    <directiveAttributes
+    data-template-add-action="true"
+    data-template-type="contact"
+    data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:processor" addDirective="data-gn-directory-entry-selector">
+    <directiveAttributes
+    data-template-add-action="true"
+    data-template-type="contact"
+    data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
+    <for name="gmd:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">
+    <directiveAttributes
+    data-template-add-action="true"
+    data-template-type="contact"
+    data-variables="gmd:role/gmd:CI_RoleCode/@codeListValue~{role}"/>
+    </for>
 
 
     <!-- Example configuration: Add onLine source from subtemplate
-    <for name="gmd:onLine" addDirective="data-gn-directory-entry-selector">
-      <directiveAttributes
-              data-template-add-action="true"
-              data-template-type="onLine"
-              data-filter='{"_root": "gmd:CI_OnlineResource"}'/>
-    </for>
-    -->
-    <!--<for name="gmd:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">-->
-      <!--
-      Example of configuration to disable free text keywords in the thesaurus selector
-      <directiveAttributes data-allow-free-text-keywords="false" />
+<for name="gmd:onLine" addDirective="data-gn-directory-entry-selector">
+<directiveAttributes
+  data-template-add-action="true"
+  data-template-type="onLine"
+  data-filter='{"_root": "gmd:CI_OnlineResource"}'/>
+</for>
+-->
+    <for name="gmd:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">
+    <!--
+Example of configuration to disable free text keywords in the thesaurus selector
+<directiveAttributes data-allow-free-text-keywords="false" />
 
-      To restrict the list of thesaurus allowed, set the include attribute
-      for the directive.
-      <directiveAttributes data-include="external.theme.inspire-theme,external.place.regions"/>
-      -->
-    <!--</for>-->
+To restrict the list of thesaurus allowed, set the include attribute
+for the directive.
+<directiveAttributes data-include="external.theme.inspire-theme,external.place.regions"/>
+-->
+    </for>
   </fields>
 
 
@@ -150,25 +151,25 @@
 
   <multilingualFields>
     <!-- In multilingual mode, define which mode
-    the widget should have. If expanded, then one
-    field per language is displayed. -->
+the widget should have. If expanded, then one
+field per language is displayed. -->
     <expanded>
       <name>gmd:title</name>
       <name>gmd:abstract</name>
     </expanded>
     <!-- All fields in ISO could be multilingual.
-    Define element to exclude.
+Define element to exclude.
 
-      The name element can optionally have ancestor, child or parent attributes to
-      further restrict the exclusion.  For example if some gmd:code elements are
-      multilingual but others are not then adding a parent/child/parent attribute
-      can restrict the exclude to only some elements.
+The name element can optionally have ancestor, child or parent attributes to
+further restrict the exclusion.  For example if some gmd:code elements are
+multilingual but others are not then adding a parent/child/parent attribute
+can restrict the exclude to only some elements.
 
-      For example:
-        <name ancestor="gmd:thesaurusName">gmd:code</name>
-        or
-        <name child="gmx:Anchor">gmd:code</name>
-    -->
+For example:
+<name ancestor="gmd:thesaurusName">gmd:code</name>
+or
+<name child="gmx:Anchor">gmd:code</name>
+-->
     <exclude>
       <name>gmd:identifier</name>
       <name>gmd:metadataStandardName</name>
@@ -229,22 +230,52 @@
 
   <!-- View configuration -->
   <views>
-  <view name="default">
-      <tab id="default" default="true" mode="flat" >
+    <view name="default">
+      <tab id="default" default="true" mode="flat">
+        <section name="gmd:MD_Metadata">
+          <field xpath="/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:individualName"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress"/>
+
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualName"/>
+          <field xpath="/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress"/>
+          <field xpath="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword"/>
+          <field xpath="/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:temporalElement/gmd:EX_TemporalExtent"/>
+          <field xpath="/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement"/>
+        </section>
+      </tab>
+
+      <!-- Elements that should not use the "flat" mode -->
+      <flatModeExceptions>
+        <for name="gmd:descriptiveKeywords"/>
+        <for name="gmd:keyword"/>
+        <for name="gmd:spatialResolution"/>
+        <for name="gmd:pointOfContact"/>
+        <for name="gmd:distributor"/>
+        <for name="gmd:contact"/>
+        <for name="gmd:processor"/>
+        <for name="gmd:citedResponsibleParty"/>
+        <for name="gmd:topicCategory"/>
+      </flatModeExceptions>
+    </view>
+
+    <view name="default-old">
+      <tab id="default-old" default="false" mode="flat">
         <section name="gmd:MD_Metadata">
           <field xpath="/gmd:MD_Metadata/gmd:contact" or="contact" in="/gmd:MD_Metadata"/>
           <!--<field xpath="/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress"-->
-                 <!--or="email" in="/gmd:MD_Metadata"/>-->
+          <!--or="email" in="/gmd:MD_Metadata"/>-->
         </section>
 
-        <section xpath="/gmd:MD_Metadata/gmd:identificationInfo" />
+        <section xpath="/gmd:MD_Metadata/gmd:identificationInfo"/>
         <!--<section xpath="/gmd:MD_Metadata/gmd:distributionInfo"/>-->
         <!--<section xpath="/gmd:MD_Metadata/gmd:dataQualityInfo"/>-->
       </tab>
 
       <!-- Elements that should not use the "flat" mode -->
       <flatModeExceptions>
-        <for name="gmd:descriptiveKeywords" />
+        <for name="gmd:descriptiveKeywords"/>
         <for name="gmd:keyword"/>
         <for name="gmd:spatialResolution"/>
         <!--<for name="gmd:pointOfContact"/>-->
@@ -256,18 +287,18 @@
       </flatModeExceptions>
 
       <!--
-      To configure the type of transformations
-      or the number of keyword allowed for e
-      thesaurus define a specific configuration:
+To configure the type of transformations
+or the number of keyword allowed for e
+thesaurus define a specific configuration:
 
-      eg. only 2 INSPIRE themes with Anchor.
+eg. only 2 INSPIRE themes with Anchor.
 
-      <thesaurusList>
-        <thesaurus key="external.theme.inspire-theme"
-                   maxtags="2"
-                   transformations="to-iso19139-keyword-with-anchor"/>
-      </thesaurusList>
-      -->
+<thesaurusList>
+<thesaurus key="external.theme.inspire-theme"
+ maxtags="2"
+ transformations="to-iso19139-keyword-with-anchor"/>
+</thesaurusList>
+-->
     </view>
     <view name="advanced">
       <tab id="identificationInfo" default="true">

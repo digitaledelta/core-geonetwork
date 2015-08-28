@@ -20,20 +20,20 @@
     <xsl:choose>
       <xsl:when test="$sectionName">
         <!-- Removed sections -->
-        <!--<fieldset data-gn-field-highlight="">-->
-          <!--&lt;!&ndash; Get translation for labels.-->
-          <!--If labels contains ':', search into labels.xml. &ndash;&gt;-->
-          <!--<legend data-gn-slide-toggle="">-->
-            <!--<xsl:value-of-->
-              <!--select="if (contains($sectionName, ':'))-->
-                <!--then gn-fn-metadata:getLabel($schema, $sectionName, $labels)/label-->
-                <!--else $strings/*[name() = $sectionName]"-->
-            <!--/>-->
-          <!--</legend>-->
+        <fieldset data-gn-field-highlight="">
+          <!-- Get translation for labels.
+          If labels contains ':', search into labels.xml. -->
+          <legend data-gn-slide-toggle="">
+            <xsl:value-of
+              select="if (contains($sectionName, ':'))
+                then gn-fn-metadata:getLabel($schema, $sectionName, $labels)/label
+                else $strings/*[name() = $sectionName]"
+            />
+          </legend>
           <xsl:apply-templates mode="form-builder" select="@*|*">
             <xsl:with-param name="base" select="$base"/>
           </xsl:apply-templates>
-        <!--</fieldset>-->
+        </fieldset>
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates mode="form-builder" select="@*|*">

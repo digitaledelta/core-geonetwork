@@ -6,7 +6,7 @@
                  xmlns:xlink="http://www.w3.org/1999/xlink"
                  xmlns:geonet="http://www.fao.org/geonetwork">
     <gmd:fileIdentifier>
-        <gco:CharacterString></gco:CharacterString>
+        <gco:CharacterString>203cfcad-41f5-47d7-89dd-e8f6b8785659</gco:CharacterString>
     </gmd:fileIdentifier>
     <gmd:language>
         <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
@@ -17,27 +17,28 @@
     </gmd:characterSet>
     <gmd:contact>
         <gmd:CI_ResponsibleParty>
-            <gmd:individualName>
-                <gco:CharacterString>Rudie</gco:CharacterString>
+            <gmd:individualName gco:nilReason="missing">
+                <gco:CharacterString/>
             </gmd:individualName>
-            <gmd:organisationName>
-                <gco:CharacterString>E-mail address of the person who entered the metadata</gco:CharacterString>
-            </gmd:organisationName>
             <gmd:contactInfo>
                 <gmd:CI_Contact>
-                    <gmd:phone>
-                        <gmd:CI_Telephone/>
-                    </gmd:phone>
+                    <gmd:address>
+                        <gmd:CI_Address>
+                            <gmd:electronicMailAddress gco:nilReason="missing">
+                                <gco:CharacterString/>
+                            </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                    </gmd:address>
                 </gmd:CI_Contact>
             </gmd:contactInfo>
             <gmd:role>
-                <gmd:CI_RoleCode codeListValue="publisher"
+                <gmd:CI_RoleCode codeListValue="pointOfContact"
                                  codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"/>
             </gmd:role>
         </gmd:CI_ResponsibleParty>
     </gmd:contact>
     <gmd:dateStamp>
-        <gco:DateTime>2015-08-25T16:13:17</gco:DateTime>
+        <gco:DateTime>2015-08-28T12:14:29</gco:DateTime>
     </gmd:dateStamp>
     <gmd:metadataStandardName>
         <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
@@ -61,9 +62,7 @@
             <gmd:citation>
                 <gmd:CI_Citation>
                     <gmd:title>
-                        <gco:CharacterString>Title of the dataset; be as specific as possible, the user should be able
-                            to know in general what the dataset contains.
-                        </gco:CharacterString>
+                        <gco:CharacterString>Deltares metadata template ISO19139</gco:CharacterString>
                     </gmd:title>
                     <gmd:date>
                         <gmd:CI_Date>
@@ -78,8 +77,8 @@
                     </gmd:date>
                 </gmd:CI_Citation>
             </gmd:citation>
-            <gmd:abstract>
-                <gco:CharacterString>description of the dataset in max. 200 words</gco:CharacterString>
+            <gmd:abstract gco:nilReason="missing">
+                <gco:CharacterString/>
             </gmd:abstract>
             <gmd:status>
                 <gmd:MD_ProgressCode codeListValue="completed"
@@ -87,18 +86,21 @@
             </gmd:status>
             <gmd:pointOfContact>
                 <gmd:CI_ResponsibleParty>
-                    <gmd:individualName>
-                        <gco:CharacterString>Who should be contacted for questions about the dataset
-                        </gco:CharacterString>
+                    <gmd:individualName gco:nilReason="missing">
+                        <gco:CharacterString/>
                     </gmd:individualName>
-                    <gmd:organisationName>
-                        <gco:CharacterString>e-mail address of the person to ask for the data</gco:CharacterString>
+                    <gmd:organisationName gco:nilReason="missing">
+                        <gco:CharacterString/>
                     </gmd:organisationName>
                     <gmd:contactInfo>
                         <gmd:CI_Contact>
-                            <gmd:phone>
-                                <gmd:CI_Telephone/>
-                            </gmd:phone>
+                            <gmd:address>
+                                <gmd:CI_Address>
+                                    <gmd:electronicMailAddress gco:nilReason="missing">
+                                        <gco:CharacterString/>
+                                    </gmd:electronicMailAddress>
+                                </gmd:CI_Address>
+                            </gmd:address>
                         </gmd:CI_Contact>
                     </gmd:contactInfo>
                     <gmd:role>
@@ -131,9 +133,9 @@
                     <gmd:temporalElement>
                         <gmd:EX_TemporalExtent>
                             <gmd:extent>
-                                <gml:TimePeriod gml:id="timeperiod1">
-                                    <gml:beginPosition>1970-01-01T00:00:00</gml:beginPosition>
-                                    <gml:endPosition>9999-01-01T00:00:00</gml:endPosition>
+                                <gml:TimePeriod gml:id="d29292e429a1052958">
+                                    <gml:beginPosition/>
+                                    <gml:endPosition/>
                                 </gml:TimePeriod>
                             </gmd:extent>
                         </gmd:EX_TemporalExtent>
@@ -145,16 +147,16 @@
                     <gmd:geographicElement>
                         <gmd:EX_GeographicBoundingBox>
                             <gmd:westBoundLongitude>
-                                <gco:Decimal>-90</gco:Decimal>
+                                <gco:Decimal>-180</gco:Decimal>
                             </gmd:westBoundLongitude>
                             <gmd:eastBoundLongitude>
-                                <gco:Decimal>90</gco:Decimal>
+                                <gco:Decimal>180</gco:Decimal>
                             </gmd:eastBoundLongitude>
                             <gmd:southBoundLatitude>
-                                <gco:Decimal>-180</gco:Decimal>
+                                <gco:Decimal>-90</gco:Decimal>
                             </gmd:southBoundLatitude>
                             <gmd:northBoundLatitude>
-                                <gco:Decimal>180</gco:Decimal>
+                                <gco:Decimal>90</gco:Decimal>
                             </gmd:northBoundLatitude>
                         </gmd:EX_GeographicBoundingBox>
                     </gmd:geographicElement>

@@ -98,7 +98,7 @@
         <xsl:with-param name="insertRef" select="gn:element/@ref"/>
         <xsl:with-param name="isDeleteDisabled" select="true()"/>
 
-        <!--<xsl:with-param name="isDeleteDisabled" select="$viewConfig/@name = 'default'"/>-->
+        {if ($viewConfig/@name = 'default') then 'true' else 'false'}
 
       </xsl:apply-templates>
     </xsl:variable>
