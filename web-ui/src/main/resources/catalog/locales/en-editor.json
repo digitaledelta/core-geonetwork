@@ -203,6 +203,7 @@
     "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title": "Title of the dataset; be as specific as possible, the user should be able to know in general what the dataset contains. ",
     "tooltip-help|/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:date/gmd:CI_Date/gmd:dateType": "Date type",
     "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:abstract": "Description of the dataset in max. 200 words",
+    "tooltip-help|/gmd:status": "Status",
     "tooltip-help|/gmd:MD_DataIdentification/gmd:status": "Is this is a validated dataset?",
     "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualName": "Who should be contacted for questions about the dataset",
     "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:organisationName": "E-mail address of the person to ask for the data",

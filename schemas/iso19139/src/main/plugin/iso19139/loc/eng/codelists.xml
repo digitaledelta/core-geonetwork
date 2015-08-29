@@ -1304,44 +1304,23 @@
 	<codelist name="gmd:MD_ProgressCode">
 		<entry>
 			<code>completed</code>
-			<label>Completed</label>
+			<label>Validated</label>
 			<description>Production of the data has been completed</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-			<code>historicalArchive</code>
-			<label>Historical archive</label>
-			<description>Data has been stored in an offline storage facility</description>
-		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-			<code>obsolete</code>
-			<label>Obsolete</label>
-			<description>Data is no longer relevant</description>
-		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
 			<code>onGoing</code>
-			<label>On going</label>
+			<label>Not Validated</label>
 			<description>Data is continually being updated</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-			<code>planned</code>
-			<label>Planned</label>
-			<description>Fixed date has been established upon or by which the data will be created or
-				updated</description>
-		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
-		<entry>
-			<code>required</code>
-			<label>Required</label>
-			<description>Data needs to be generated or updated</description>
-		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<entry>
 			<code>underDevelopment</code>
-			<label>Under development</label>
+			<label>Not applicable</label>
 			<description>Data is currently in the process of being created</description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
