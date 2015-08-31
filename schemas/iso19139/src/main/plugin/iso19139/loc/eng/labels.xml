@@ -1078,7 +1078,7 @@
 		<description>Date of the edition (YYYY-MM-DD)</description>
 	</element>
 	<element name="gmd:electronicMailAddress" id="386.0">
-		<label>Electronic mail address</label>
+		<label>E-mail address</label>
 		<description>Address of the electronic mailbox of the responsible organization or
 			individual
 		</description>
@@ -2419,7 +2419,7 @@
 		<condition>conditional</condition>
 	</element>
 	<element name="gmd:status" id="28.0">
-		<label>Status</label>
+		<label>Validated?</label>
 		<description>Status of the resource(s)</description>
 	</element>
 	<element name="gmd:supplementalInformation" id="46.0">
@@ -3356,5 +3356,4 @@
 			name="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword">
 		<label>Keyword</label>
 	</element>
-
 </labels>
