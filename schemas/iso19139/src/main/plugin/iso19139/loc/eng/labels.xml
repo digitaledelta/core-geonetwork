@@ -3279,7 +3279,7 @@
 	</element>
 	<element
 			name="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
-		<label>Your E-mail address</label>
+		<label>Your email</label>
 	</element>
 	<element
 			name="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title">
@@ -3294,7 +3294,7 @@
 	</element>
 	<element
 			name="/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
-		<label>Contact E-mail address</label>
+		<label>Contact email</label>
 	</element>
 	<element
 			name="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword">

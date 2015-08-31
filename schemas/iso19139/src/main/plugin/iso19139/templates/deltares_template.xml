@@ -6,7 +6,7 @@
                  xmlns:xlink="http://www.w3.org/1999/xlink"
                  xmlns:geonet="http://www.fao.org/geonetwork">
     <gmd:fileIdentifier>
-        <gco:CharacterString>5bfafe10-2750-4af5-bb21-d11a25daea75</gco:CharacterString>
+        <gco:CharacterString></gco:CharacterString>
     </gmd:fileIdentifier>
     <gmd:language>
         <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
@@ -17,8 +17,8 @@
     </gmd:characterSet>
     <gmd:contact>
         <gmd:CI_ResponsibleParty>
-            <gmd:individualName gco:nilReason="missing">
-                <gco:CharacterString/>
+            <gmd:individualName>
+                <gco:CharacterString>[YOUR NAME]</gco:CharacterString>
             </gmd:individualName>
             <gmd:contactInfo>
                 <gmd:CI_Contact>
@@ -38,7 +38,7 @@
         </gmd:CI_ResponsibleParty>
     </gmd:contact>
     <gmd:dateStamp>
-        <gco:DateTime>2015-08-31T08:56:50</gco:DateTime>
+        <gco:DateTime>2015-08-31T20:08:04</gco:DateTime>
     </gmd:dateStamp>
     <gmd:metadataStandardName>
         <gco:CharacterString>ISO 19115:2003/19139</gco:CharacterString>
@@ -62,7 +62,7 @@
             <gmd:citation>
                 <gmd:CI_Citation>
                     <gmd:title>
-                        <gco:CharacterString>Deltares metadata template ISO19139 (v2)</gco:CharacterString>
+                        <gco:CharacterString>Deltares metadata template ISO19139 [CHANGE TITLE]</gco:CharacterString>
                     </gmd:title>
                     <gmd:date>
                         <gmd:CI_Date>
@@ -77,17 +77,17 @@
                     </gmd:date>
                 </gmd:CI_Citation>
             </gmd:citation>
-            <gmd:abstract gco:nilReason="missing">
-                <gco:CharacterString/>
+            <gmd:abstract>
+                <gco:CharacterString>Abstract</gco:CharacterString>
             </gmd:abstract>
             <gmd:status>
-                <gmd:MD_ProgressCode codeListValue="completed"
+                <gmd:MD_ProgressCode codeListValue="onGoing"
                                      codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ProgressCode"/>
             </gmd:status>
             <gmd:pointOfContact>
                 <gmd:CI_ResponsibleParty>
-                    <gmd:individualName gco:nilReason="missing">
-                        <gco:CharacterString/>
+                    <gmd:individualName>
+                        <gco:CharacterString>[CONTACT NAME]</gco:CharacterString>
                     </gmd:individualName>
                     <gmd:organisationName gco:nilReason="missing">
                         <gco:CharacterString/>
@@ -134,8 +134,8 @@
                         <gmd:EX_TemporalExtent>
                             <gmd:extent>
                                 <gml:TimePeriod gml:id="d29292e429a1052958">
-                                    <gml:beginPosition>1970-01-01</gml:beginPosition>
-                                    <gml:endPosition>3000-01-01</gml:endPosition>
+                                    <gml:beginPosition/>
+                                    <gml:endPosition/>
                                 </gml:TimePeriod>
                             </gmd:extent>
                         </gmd:EX_TemporalExtent>
