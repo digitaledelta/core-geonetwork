@@ -3331,11 +3331,11 @@
 		<label>Initiative Type</label>
 	</element>
 	<element name="/gmd:MD_Metadata/gmd:contact/gmd:CI_ResponsibleParty/gmd:individualName">
-		<label>Name</label>
+		<label>Your name</label>
 	</element>
 	<element
 			name="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:contactInfo/gmd:CI_Contact/gmd:address/gmd:CI_Address/gmd:electronicMailAddress">
-		<label>E-mail address</label>
+		<label>Your E-mail address</label>
 	</element>
 	<element
 			name="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:title">
