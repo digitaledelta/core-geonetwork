@@ -126,7 +126,7 @@
 
             <xsl:if test="$isDeleteDisabled">
             <a class="btn pull-right"
-               data-toggle="tooltip" data-placement="top" title="Help" data-gn-field-help-tooltip="{$xpath}">
+               data-toggle="tooltip" data-placement="right" title="Help" data-gn-field-help-tooltip="{$xpath}">
               <i class="fa fa-question-circle"/>
             </a>
             </xsl:if>
