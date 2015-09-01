@@ -475,6 +475,30 @@
           };
         }])
 
+      .directive('dynamicProtocolPlaceholder', function () {
+        return {
+          restrict: 'A', link: function ($scope, element, attrs) {
+            attrs.$observe('dynamicProtocolPlaceholder', function (value) {
+              // TODO the placehoders should be configured in the labels.xml.
+              var placeholder = "http://";
+              if (value == 'WWW:DOWNLOAD-1.0-ftp--download') {
+                placeholder = 'ftp://';
+              }
+              if (value == 'FILE:DOWNLOAD-1.0-file-N-download') {
+                placeholder = 'file:///N:/';
+              }
+              if (value == 'FILE:DOWNLOAD-1.0-file-P-download') {
+                placeholder = 'file:///P:/';
+              }
+              if (value == 'FILE:other') {
+                placeholder = '';
+              }
+              element.attr('placeholder', placeholder);
+            });
+          }
+        };
+      })
+
       /**
    * @ngdoc directive
    * @name gn_formfields.directive:schemaInfoCombo
