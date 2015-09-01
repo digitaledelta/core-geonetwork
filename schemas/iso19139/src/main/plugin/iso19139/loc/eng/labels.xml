@@ -1078,7 +1078,7 @@
 		<description>Date of the edition (YYYY-MM-DD)</description>
 	</element>
 	<element name="gmd:electronicMailAddress" id="386.0">
-		<label>E-mail address</label>
+		<label>Email address</label>
 		<description>Address of the electronic mailbox of the responsible organization or
 			individual
 		</description>
@@ -1979,8 +1979,8 @@
 
 
 	<element name="gmd:organisationName" id="376.0">
-		<label>E-mail address</label>
-		<description>E-mail address</description>
+		<label>Organisation name</label>
+		<description>Organisation name</description>
 		<condition>conditional</condition>
 	</element>
 	<element name="gmd:orientationParameterAvailability" id="172.0">
