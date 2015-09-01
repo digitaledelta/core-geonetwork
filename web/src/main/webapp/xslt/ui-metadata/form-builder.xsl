@@ -759,10 +759,19 @@
     <xsl:param name="listOfValues" select="''"/>
 
     <!-- Get variable from attribute (eg. codelist) or node (eg. gco:CharacterString).-->
-    <xsl:variable name="valueToEdit"
-      select="if ($value/*) then $value/text() else $value"/>
+    <xsl:variable name="valueToEdit" >
+      <xsl:choose>
+        <!-- for empty dates, we choose the current date as default. -->
+        <xsl:when test="$type = 'date' and not($value)">
+          <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="if ($value/*) then $value/text() else $value"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
 
-    <!-- If a form field has suggestion list in helper 
+    <!-- If a form field has suggestion list in helper
     then the element is hidden and the helper directive is added.
     ListOfValues could be a codelist (with entry children) or
     helper (with option).
@@ -884,13 +893,13 @@
         </input>
       </xsl:when>
       <xsl:otherwise>
-        
+
         <xsl:variable name="isDirective" select="starts-with($type, 'data-')"/>
         
         <xsl:variable name="input">
-          <input class="form-control {if ($lang) then 'hidden' else ''}" 
+          <input class="form-control {if ($lang) then 'hidden' else ''}"
             id="gn-field-{$editInfo/@ref}" 
-            name="_{$name}" 
+            name="_{$name}"
             value="{normalize-space($valueToEdit)}">
             <!-- If type is a directive -->
             <xsl:if test="$isDirective">
