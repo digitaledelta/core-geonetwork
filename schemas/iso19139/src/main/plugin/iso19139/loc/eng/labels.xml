@@ -2121,17 +2121,16 @@
 		<label>Protocol</label>
 		<description>Connection protocol to be used</description>
 		<helper sort="true">
-			<option value="GLG:KML-2.0-http-get-map">Google Earth KML service (ver 2.0)
-			</option>
+			<option value="WWW:LINK-1.0-http--link" default="">Web address (URL)</option>
+			<option value="WWW:DOWNLOAD-1.0-ftp--download">File for download through FTP</option>
+			<option value="FILE:DOWNLOAD-1.0-file-P-download">File on P-Drive</option>
+			<option value="FILE:DOWNLOAD-1.0-file-N-download">File on N-Drive</option>
+			<option value="GLG:KML-2.0-http-get-map">Google Earth KML service (ver 2.0)</option>
+			<option value="WWW:LINK-1.0-http--opendap">OPeNDAP URL</option>
 			<option value="OGC:WCS">OGC-WCS Web Coverage Service</option>
 			<option value="OGC:WFS">OGC-WFS Web Feature Service</option>
-			<option value="OGC:WMS-1.3.0-http-get-map">OGC Web Map Service (ver 1.3.0)
-			</option>
+			<option value="OGC:WMS-1.3.0-http-get-map">OGC Web Map Service (ver 1.3.0)</option>
 			<option value="OGC:WPS">OGC-WPS Web Processing Service</option>
-			<option value="WWW:DOWNLOAD-1.0-ftp--download">File for download through FTP</option>
-			<option value="WWW:LINK-1.0-http--link" default="">Web address (URL)</option>
-			<option value="WWW:LINK-1.0-http--opendap">OPeNDAP URL</option>
-			<option value="FILE:DOWNLOAD-1.0-file-P-or-N-download">File on P- or N-Drive</option>
 			<option value="FILE:other">Other</option>
 		</helper>
 	</element>
