@@ -349,8 +349,9 @@ or
     <!--in="/gmd:MD_Metadata"/>-->
     <!--</tab>-->
     <!--</view>-->
-    <view name="xml">
-      <tab id="xml" default="true"/>
-    </view>
+
+    <!--<view name="xml">-->
+      <!--<tab id="xml" default="true"/>-->
+    <!--</view>-->
   </views>
 </editor>
