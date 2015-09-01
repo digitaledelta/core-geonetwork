@@ -6,7 +6,7 @@
                  xmlns:xlink="http://www.w3.org/1999/xlink"
                  xmlns:geonet="http://www.fao.org/geonetwork">
     <gmd:fileIdentifier>
-        <gco:CharacterString></gco:CharacterString>
+        <gco:CharacterString/>
     </gmd:fileIdentifier>
     <gmd:language>
         <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng"/>
@@ -18,7 +18,7 @@
     <gmd:contact>
         <gmd:CI_ResponsibleParty>
             <gmd:individualName>
-                <gco:CharacterString>[YOUR NAME]</gco:CharacterString>
+                <gco:CharacterString/>
             </gmd:individualName>
             <gmd:contactInfo>
                 <gmd:CI_Contact>
@@ -78,7 +78,7 @@
                 </gmd:CI_Citation>
             </gmd:citation>
             <gmd:abstract>
-                <gco:CharacterString>Abstract</gco:CharacterString>
+                <gco:CharacterString/>
             </gmd:abstract>
             <gmd:status>
                 <gmd:MD_ProgressCode codeListValue="onGoing"
@@ -87,7 +87,7 @@
             <gmd:pointOfContact>
                 <gmd:CI_ResponsibleParty>
                     <gmd:individualName>
-                        <gco:CharacterString>[CONTACT NAME]</gco:CharacterString>
+                        <gco:CharacterString/>
                     </gmd:individualName>
                     <gmd:organisationName gco:nilReason="missing">
                         <gco:CharacterString/>
@@ -134,7 +134,7 @@
                         <gmd:EX_TemporalExtent>
                             <gmd:extent>
                                 <gml:TimePeriod gml:id="d29292e429a1052958">
-                                    <gml:beginPosition/>
+                                    <gml:beginPosition>1970-01-01</gml:beginPosition>
                                     <gml:endPosition/>
                                 </gml:TimePeriod>
                             </gmd:extent>
@@ -164,22 +164,4 @@
             </gmd:extent>
         </gmd:MD_DataIdentification>
     </gmd:identificationInfo>
-    <gmd:distributionInfo xmlns:srv="http://www.isotc211.org/2005/srv"
-                          xmlns:date="http://exslt.org/dates-and-times">
-        <gmd:MD_Distribution>
-            <gmd:distributionFormat>
-                <gmd:MD_Format>
-                    <gmd:name>
-                        <gco:CharacterString>Text</gco:CharacterString>
-                    </gmd:name>
-                    <gmd:version>
-                        <gco:CharacterString>1.0</gco:CharacterString>
-                    </gmd:version>
-                </gmd:MD_Format>
-            </gmd:distributionFormat>
-            <gmd:transferOptions>
-                <gmd:MD_DigitalTransferOptions/>
-            </gmd:transferOptions>
-        </gmd:MD_Distribution>
-    </gmd:distributionInfo>
 </gmd:MD_Metadata>
