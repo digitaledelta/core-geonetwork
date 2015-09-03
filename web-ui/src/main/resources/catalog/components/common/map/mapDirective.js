@@ -213,11 +213,21 @@
               * the bbox from the map extent.
               */
              scope.updateBbox = function() {
-
+               var oldSouth = scope.extent.form[1];
+               var oldNorth = scope.extent.form[3];
+               if (scope.extent.form[1] < -85) {
+                  scope.extent.form[1] = -85;
+               }
+               if (scope.extent.form[3] > 85) {
+                 scope.extent.form[3] = 85;
+               }
                reprojExtent('form', 'map');
                reprojExtent('form', 'md');
                setDcOutput();
                drawBbox();
+               scope.extent.form[1] = oldSouth;
+               scope.extent.form[3] = oldNorth;
+
                map.getView().fitExtent(scope.extent.map, map.getSize());
              };
 
