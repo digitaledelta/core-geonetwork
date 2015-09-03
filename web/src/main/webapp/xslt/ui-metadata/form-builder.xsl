@@ -762,7 +762,7 @@
     <xsl:variable name="valueToEdit" >
       <xsl:choose>
         <!-- for empty dates, we choose the current date as default. -->
-        <xsl:when test="$type = 'date' and not($value)">
+        <xsl:when test="$type = 'date' and string-length($value) = 0">
           <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
         </xsl:when>
         <xsl:otherwise>
