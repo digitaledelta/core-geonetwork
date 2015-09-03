@@ -18,13 +18,7 @@
       <table class="text-center">
         <tr align="center">
           <td>
-            <select data-ng-model="projs.form"
-                title="{{'chooseAProj' | translate}}">
-              <option data-ng-repeat="proj in projs.list"
-                      value="{{proj.code}}"
-                      data-ng-selected="proj.code == projs.form">{{proj.label}}
-              </option>
-            </select>
+            <input data-ng-model="projs.form" type="hidden" value="EPSG:43" />
           </td>
           <td><div class="form-group">
               <input
