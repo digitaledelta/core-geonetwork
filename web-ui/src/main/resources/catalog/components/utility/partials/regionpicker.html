@@ -3,15 +3,9 @@
     <button type="button"
       class="btn btn-default dropdown-toggle"
       data-toggle="dropdown">
-      {{regionType.label}} <span class="caret"></span>
+      Region
     </button>
-    <ul class="dropdown-menu">
-      <li data-ng-repeat="regionObj in gnRegionService.regionsList">
-        <a href="" data-ng-click="setRegion(regionObj)">
-          <span data-translate="">{{regionObj.name}}</span>
-        </a>
-      </li>
-    </ul>
+
   </div>
   <!-- /btn-group -->
   <input type="text" name="regionpicker" class="form-control"
