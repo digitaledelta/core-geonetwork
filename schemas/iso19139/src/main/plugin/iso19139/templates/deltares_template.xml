@@ -81,7 +81,7 @@
                 <gco:CharacterString/>
             </gmd:abstract>
             <gmd:status>
-                <gmd:MD_ProgressCode codeListValue="onGoing"
+                <gmd:MD_ProgressCode codeListValue="completed"
                                      codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ProgressCode"/>
             </gmd:status>
             <gmd:pointOfContact>
