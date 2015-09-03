@@ -18,6 +18,7 @@
 
   <xsl:import href="menu-builder.xsl"/>
 
+
   <!-- 
     Render an element with a label and a value
   -->
@@ -765,6 +766,9 @@
         <xsl:when test="$type = 'date' and string-length($value) = 0">
           <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
         </xsl:when>
+        <xsl:when test="starts-with(string($value/text()), 'Deltares metadata template') ">
+            <xsl:value-of select="''"/>
+        </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="if ($value/*) then $value/text() else $value"/>
         </xsl:otherwise>
@@ -908,9 +912,9 @@
             <xsl:if test="$tooltip">
               <xsl:attribute name="data-gn-field-tooltip" select="$tooltip"/>
             </xsl:if>
-            <xsl:if test="$isRequired">
-              <xsl:attribute name="required" select="'required'"/>
-            </xsl:if>
+            <!--<xsl:if test="$isRequired">-->
+              <!--<xsl:attribute name="required" select="'required'"/>-->
+            <!--</xsl:if>-->
             <xsl:if test="$checkDirective">
               <xsl:attribute name="data-gn-check" select="concat('#gn-el-', $editInfo/@ref)"/>
             </xsl:if>
