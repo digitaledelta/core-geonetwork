@@ -14,12 +14,14 @@
             <span><span>{{'backTo' + (fromView || 'search') | translate}}</span></span>
         </button>
 
+        <!-- this is pure for development, all data that can be shown -->
+        <div data-ng-class="user['@authenticated'] === 'true' ? '' : 'invisible'">
         <button class="btn btn-primary ng-hide"
                 data-ng-click="Dfullview=true; format();"
                 ng-hide="Dfullview">
             <span><span>Close Full view</span></span>
         </button>
-
+        </div>
         <button class="btn btn-link d-btn-background"
                 data-ng-class="mdView.current.index === 0 ? 'disabled' : ''"
                 data-ng-show="mdView.records.length > 1"
@@ -469,11 +471,11 @@
                             <button class="btn btn-default col-md-4 col-md-push-1"
                                     data-ng-click="Dfullview=false; format({'label':'full','url':'md.format.xml?xsl=full_view&uuid='});"
                                     >
-                                <span data-translate="">Show all known metadata</span>
+                                <span data-translate="">Show all metadata</span>
                             </button>
                             <button class="btn btn-default col-md-4 col-md-push-2"
                                     onclick="window.open('mailto:deltaresdata@deltares.nl', '_blank')">
-                                <span data-translate="">Email us with feedback</span>
+                                <span data-translate="">Email feedback</span>
                             </button>
 
                         </div>
