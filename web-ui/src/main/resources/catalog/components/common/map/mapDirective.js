@@ -215,6 +215,7 @@
              scope.updateBbox = function() {
                var oldSouth = scope.extent.form[1];
                var oldNorth = scope.extent.form[3];
+
                if (scope.extent.form[1] < -85) {
                   scope.extent.form[1] = -85;
                }
