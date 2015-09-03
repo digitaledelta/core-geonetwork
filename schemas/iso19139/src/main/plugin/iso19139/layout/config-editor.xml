@@ -284,6 +284,7 @@ or
     <!--<for name="gmd:topicCategory"/>-->
     <!--</flatModeExceptions>-->
     <!--</view>-->
+
     <!--<view name="advanced">-->
     <!--<tab id="identificationInfo" default="true">-->
     <!--<section xpath="/gmd:MD_Metadata/gmd:identificationInfo" or="identificationInfo"-->
@@ -312,6 +313,7 @@ or
     <!--<section xpath="/gmd:MD_Metadata/gmd:portrayalCatalogueInfo" or="portrayalCatalogueInfo"-->
     <!--in="/gmd:MD_Metadata"/>-->
     <!--</tab>-->
+    <!--</view>-->
     <!--<tab id="metadata">-->
     <!--<section name="metadata">-->
     <!--<field xpath="/gmd:MD_Metadata/gmd:fileIdentifier"/>-->
@@ -350,8 +352,8 @@ or
     <!--</tab>-->
     <!--</view>-->
 
-    <!--<view name="xml">-->
-      <!--<tab id="xml" default="true"/>-->
-    <!--</view>-->
+    <view name="xml">
+      <tab id="xml" default="true"/>
+    </view>
   </views>
 </editor>
