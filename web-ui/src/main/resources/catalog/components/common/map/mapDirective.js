@@ -170,6 +170,14 @@
                if (scope.extent.map == null) {
                  return;
                }
+               var oldSouth = scope.extent.form[1];
+               var oldNorth = scope.extent.form[3];
+               if (scope.extent.form[1] < -85) {
+                 scope.extent.form[1] = -85;
+               }
+               if (scope.extent.form[3] > 85) {
+                 scope.extent.form[3] = 85;
+               }
 
                if (gnMap.isPoint(scope.extent.map)) {
                  coordinates = [scope.extent.map[0],
@@ -184,6 +192,9 @@
                feature.setGeometry(geom);
                feature.getGeometry().setCoordinates(coordinates);
                scope.extent.map = geom.getExtent();
+               scope.extent.form[1] = oldSouth;
+               scope.extent.form[3] = oldNorth;
+
              };
 
              /**
@@ -198,6 +209,7 @@
                if (gnMap.isValidExtent(scope.extent.map)) {
                  map.getView().fitExtent(scope.extent.map, map.getSize());
                }
+
              });
 
              /**
@@ -215,7 +227,6 @@
              scope.updateBbox = function() {
                var oldSouth = scope.extent.form[1];
                var oldNorth = scope.extent.form[3];
-               alert('oldSouth' + oldSouth);
                if (scope.extent.form[1] < -85) {
                   scope.extent.form[1] = -85;
                }
