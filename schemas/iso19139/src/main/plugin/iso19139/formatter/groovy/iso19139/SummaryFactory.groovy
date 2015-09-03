@@ -75,7 +75,7 @@ class SummaryFactory {
         if (env.formatType == FormatType.pdf/* || env.formatType == FormatType.testpdf */) {
             summary.associated.add(isoHandlers.commonHandlers.loadHierarchyLinkBlocks())
         } else {
-            summary.associated.add(createDynamicAssociatedHtml(summary))
+            // summary.associated.add(createDynamicAssociatedHtml(summary))
         }
 
         def toNavBarItem = {s ->
@@ -84,8 +84,8 @@ class SummaryFactory {
             new NavBarItem(name, abbrName, '.' + s.replace(':', "_"))
         }
         summary.navBar = this.isoHandlers.packageViews.findAll{navBarItems.contains(it)}.collect (toNavBarItem)
-        summary.navBarOverflow = this.isoHandlers.packageViews.findAll{!navBarItems.contains(it)}.collect (toNavBarItem)
-        summary.navBarOverflow.add(isoHandlers.commonHandlers.createXmlNavBarItem())
+//        summary.navBarOverflow = this.isoHandlers.packageViews.findAll{!navBarItems.contains(it)}.collect (toNavBarItem)
+//        summary.navBarOverflow.add(isoHandlers.commonHandlers.createXmlNavBarItem())
         summary.content = this.isoHandlers.rootPackageEl(metadata)
 
         if (summaryCustomizer != null) {
