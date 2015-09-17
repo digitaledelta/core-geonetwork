@@ -45,7 +45,7 @@
       <!--end top row-->
       <div style="clear: both;"></div>
       <!--start middle row-->
-      <div style="margin-top:10px">
+      <div style="margin-top:10px" data-ng-if="md.getThumbnails().list[0].url">
         <!-- Thumbnail -->
         <div class="gn-md-thumbnail" 
              data-ng-class="md.getThumbnails().list.length > 0 ? '' : 'invisible'">
@@ -65,11 +65,49 @@
                   {{md.title || md.defaultTitle}}</a>
               </h3>
               <p class="text-muted">
-                  {{ md.abstract | limitTo : 150}}{{md.abstract.length > 150 ? '...' : ''}} 
+                  {{ md.abstract | limitTo : 170}}{{md.abstract.length > 170 ? '...' : ''}} 
               </p>
-              <p class="text-muted">
+              <!-- p class="text-muted">
                   Type: {{md.type[0]}}
+              </p -->
+          </div>
+
+          <!-- div class="row gn-md-details">
+            <p data-ng-if="md.getContacts().resource">
+              <!--<h5 data-translate="">contacts</h5>
+              {{::md.getContacts().resource}}
+            </p>
+
+            <p data-ng-if="md.Constraints">
+              <h5 data-translate="">license</h5>
+              <span data-ng-repeat="c in ::md.Constraints">{{c}}, </span>
+            </p>>
+            <<p data-ng-if="md.keyword">
+              <span class="badge" data-ng-repeat="k in ::md.keyword">{{k}}</span>
+            </p>>
+          </div -->
+        </div>
+      
+      </div>
+      
+      <div style="margin-top:10px" data-ng-if="! md.getThumbnails().list[0].url">
+                
+        <div style="float:left; display:block; width: 100%">
+          <div class="row gn-md-title">
+              <h3>
+                <a href=""
+                   data-ng-click="openRecord($index, md, searchResults.records)"
+                   title="{{md.title || md.defaultTitle}}">
+
+                  <i class="fa gn-icon-{{md.type[0]}}" title="{{md.type[0] | translate}}"/>
+                  {{md.title || md.defaultTitle}}</a>
+              </h3>
+              <p class="text-muted">
+                  {{ md.abstract | limitTo : 300}}{{md.abstract.length > 300 ? '...' : ''}} 
               </p>
+              <!-- p class="text-muted">
+                  Type: {{md.type[0]}}
+              </p -->
           </div>
 
           <!-- div class="row gn-md-details">

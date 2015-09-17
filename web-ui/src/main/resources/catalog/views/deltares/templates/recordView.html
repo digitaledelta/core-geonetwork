@@ -14,29 +14,27 @@
             <span><span>{{'backTo' + (fromView || 'search') | translate}}</span></span>
         </button>
 
-        <!-- this is pure for development, all data that can be shown -->
-        <div data-ng-class="user['@authenticated'] === 'true' ? '' : 'invisible'">
-        <button class="btn btn-primary ng-hide"
-                data-ng-click="Dfullview=true; format();"
-                ng-hide="Dfullview">
+        <button class="btn btn-primary delta_hide_fullview"
+                style="display:none;"
+                data-ng-click="format();"
+                onclick="$(this).hide()"
+                >
             <span><span>Close Full view</span></span>
         </button>
-        </div>
-        <button class="btn btn-link d-btn-background"
+        <!-- button class="btn btn-link d-btn-background"
                 data-ng-class="mdView.current.index === 0 ? 'disabled' : ''"
                 data-ng-show="mdView.records.length > 1"
                 data-ng-click="previousRecord()">
             <i class="fa fa-angle-left"></i>
             <span data-translate="">previous</span>
-        </button>
-        <button class="btn btn-link d-btn-background"
+        </button -->
+        <!-- button class="btn btn-link d-btn-background"
                 data-ng-class="mdView.current.index === mdView.records.length-1 ? 'disabled' : ''"
                 data-ng-show="mdView.records.length > 1"
                 data-ng-click="nextRecord()">
             <span data-translate="">next</span>
             <i class="fa fa-angle-right"></i>
-        </button>
-
+        </button -->
 
         <!--div class="btn-group pull-right">
          <button type="button" class="btn btn-link dropdown-toggle"
@@ -469,7 +467,8 @@
                         <div class='row'>
                             <!-- the format at data-ng-click is very hackey... the default view somehow knows to fill in &uuid= instead of the &id= that was the result I got using the 'correct' way -->
                             <button class="btn btn-default col-md-4 col-md-push-1"
-                                    data-ng-click="Dfullview=false; format({'label':'full','url':'md.format.xml?xsl=full_view&uuid='});"
+                                    onclick="$('.delta_hide_fullview').show()"
+                                    data-ng-click="format({'label':'full','url':'md.format.xml?xsl=full_view&uuid='});"
                                     >
                                 <span data-translate="">Show all metadata</span>
                             </button>

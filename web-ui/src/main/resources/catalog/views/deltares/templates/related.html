@@ -10,21 +10,33 @@
 	<div class="row list-group-item gn-related-item"
 				data-ng-repeat="r in relations track by $index"
 				data-ng-init="mainType = config.getType(r);type = r['@type'];"
-				data-ng-if="r['@type'] !== 'thumbnail'">
+				data-ng-if="r['@type'] !== 'thumbnail'"
+                href="{{r.url}}"
+                onclick="if (angular.element($(this)).scope().mainType == 'FILE')
+                         {
+                            window.prompt('Copy to clipboard: Ctrl+C, Enter', this.getAttribute('href'));
+                            return false;
+                         }
+                        else
+                        {
+                            window.open(this.getAttribute('href'),'_blank');
+                            return false;
+                        }"
+                title="{{(config.getLabel(mainType) + type) | translate}}">
 
-		<div class="col-xs-1 visible-lg-*" data-ng-if="mainType === 'LINKDOWNLOAD'">
-			<strong>
+		<div class=" visible-lg-*" data-ng-if="mainType === 'LINKDOWNLOAD'">
 				<i class="fa fa-2x"
-					 data-ng-class="config.getClassIcon(mainType)"/>&nbsp;
-			</strong>
+					 data-ng-class="config.getClassIcon(mainType)"/>
 		</div>
-        <div class="col-xs-1 visible-lg-*" data-ng-if="mainType !== 'LINKDOWNLOAD'">
-			<strong>
+        <div class=" visible-lg-*" data-ng-if="mainType === 'FILE'">
 				<i class="fa fa-2x"
-					 data-ng-class="config.getClassIcon('LINK')"/>&nbsp;
-			</strong>
+					 data-ng-class="config.getClassIcon('MD')"/>
 		</div>
-		<div class="col-xs-7">
+        <div class=" visible-lg-*" data-ng-if="mainType !== 'LINKDOWNLOAD' && mainType !== 'FILE'">
+				<i class="fa fa-2x"
+					 data-ng-class="config.getClassIcon('LINK')"/>
+		</div>
+        <div class='delta_download_title' >
 			<!-- WMS & WFS contains layer name in title -->
 			<h4 data-ng-if="mainType !== 'WMS' &&
 											mainType !== 'LINKDOWNLOAD' &&
@@ -48,7 +60,7 @@
                 {{r.url}}
 			</p>
 		</div>
-		<div class="col-xs-4" style="float:right;">
+		<!-- div style="float:right;">
 			<button type="button"
 							class="btn btn-default btn-lg btn-block"
                             href="{{r.url}}"
@@ -61,6 +73,6 @@
 					{{(config.getLabel('LINK') + type) | translate}}
 				</span>
 			</button>
-		</div>
+		</div -->
 	</div>
 </div>
