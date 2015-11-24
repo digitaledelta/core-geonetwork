@@ -11,7 +11,8 @@
     "addFromThesaurus": "or select them in a thesaurus",
     "addKeywordNotFromThesaurus": "Add new keywords",
     "addLinks": "Add links",
-    "addOnlinesrc": "Add datasets (Download/Links)",
+    "addOnlinesrc": "Set download locations",
+    "saveOnlinesrc": "Save",
     "addOnlinesrcTitle": "Link an online resource to the current metadata",
     "addThumbnail": "Add a thumbnail",
     "addThumbnailTitle": "Add an overview to the current metadata",
@@ -208,7 +209,7 @@
     "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:individualName": "Who should be contacted for questions about the dataset",
     "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:organisationName": "Organisation",
     "tooltip-help|/gmd:MD_DataIdentification/gmd:pointOfContact/gmd:CI_ResponsibleParty/gmd:role": "Role of the user that should be contacted for information about the data",
-    "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword": "Describe the most important aspects of the data, useful for finding it; for example the file format ('netcdf', 'shapefile') or theme ('elevation', 'marine'), etc.",
+    "tooltip-help|/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword": "Describe the most important aspects of the data, useful for finding it; for example the file format ('netcdf', 'shapefile') or theme ('elevation', 'marine'), etc. Only one keyword per line should be entered.",
     "tooltip-help|/gmd:MD_DataIdentification/gmd:language": "Language of the dataset",
     "tooltip-help|/gmd:MD_DataIdentification/gmd:topicCategory": "Topic category of the metadata",
 
