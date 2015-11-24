@@ -1305,7 +1305,7 @@
 		<entry>
 			<code>completed</code>
 			<label>Validated</label>
-			<description>Production of the data has been completed</description>
+			<description></description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -1313,7 +1313,7 @@
 		<entry>
 			<code>onGoing</code>
 			<label>Not Validated</label>
-			<description>Data is continually being updated</description>
+			<description></description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -1321,7 +1321,7 @@
 		<entry>
 			<code>underDevelopment</code>
 			<label>Not applicable</label>
-			<description>Data is currently in the process of being created</description>
+			<description></description>
 		</entry>
 		<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 	</codelist>
