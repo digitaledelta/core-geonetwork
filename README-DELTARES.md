@@ -46,8 +46,7 @@ origin  https://github.com/openearth/core-geonetwork.git (push)
 Getting the Deltares branch in synch with geonetwork consists of 2 steps:
 
 	- fetching upstream changes of the 3.0.x branch of geonetwork.
-	- rebasing the 3.0.x-deltares branch.
-
+	- merging the changes to the 3.0.x-deltares branch.
 
 If not following the upstream, add them:
 
