@@ -21,6 +21,7 @@ import org.fao.geonet.utils.GeonetHttpRequestFactory;
 import org.fao.geonet.utils.Log;
 import org.geonetwork.http.proxy.util.RequestUtil;
 import org.geonetwork.http.proxy.util.ServletConfigUtil;
+import org.geonetwork.http.proxy.util.SslRelaxedTrustManager;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -29,9 +30,15 @@ import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -147,6 +154,8 @@ public class HttpProxyServlet extends HttpServlet {
                 // Added support for proxy
                 Lib.net.setupProxy(sm, clientBuilder, new URL(url).getHost());
 
+                configureClientForRelaxedSsl(clientBuilder);
+
                 HttpClient client = clientBuilder.build();
 
                 final HttpResponse httpResponse = client.execute(method);
@@ -194,6 +203,13 @@ public class HttpProxyServlet extends HttpServlet {
         }
     }
 
+    private void configureClientForRelaxedSsl(HttpClientBuilder clientBuilder) throws NoSuchAlgorithmException, KeyManagementException {
+        SSLContext ctx = SSLContext.getInstance("TLS");
+        ctx.init(new KeyManager[0], new TrustManager[]{new SslRelaxedTrustManager()}, new SecureRandom());
+        clientBuilder.setSslcontext(ctx);
+        clientBuilder.setConnectionManager(null); // Required to apply the new SSLContext.
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpGet httpGet = null;
@@ -221,7 +237,7 @@ public class HttpProxyServlet extends HttpServlet {
 
                 // Added support for proxy
                 Lib.net.setupProxy(sm, clientBuilder, new URL(url).getHost());
-
+                configureClientForRelaxedSsl(clientBuilder);
                 HttpClient client = clientBuilder.build();
 
                 httpGet = new HttpGet(uri);
@@ -328,7 +344,7 @@ public class HttpProxyServlet extends HttpServlet {
 
                 // Added support for proxy
                 Lib.net.setupProxy(sm, clientBuilder, new URL(url).getHost());
-
+                configureClientForRelaxedSsl(clientBuilder);
                 HttpClient client = clientBuilder.build();
 
                 // Transfer bytes from in to out
