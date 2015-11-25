@@ -3297,6 +3297,6 @@
 	</element>
 	<element
 			name="/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:descriptiveKeywords/gmd:MD_Keywords/gmd:keyword">
-		<label>Keywords</label>
+		<label>Keywords; one keyword per line</label>
 	</element>
 </labels>
