@@ -196,6 +196,12 @@ public class UserQueryInput {
                             // addValues(searchCriteria, nodeName, nodeValue);
                             // Rename search parameter to lucene index field
                             // when needed
+                            if ("true".equalsIgnoreCase(System.getProperty("geonetwork.search.temporal.extend.overrule"))) {
+                                // if the -Dgeonetwork.search.temporal.extend.overrule=true ws configured, we use temporal extent search.
+                                if (SearchParameter.DATEFROM.equals(nodeName)) nodeName = SearchParameter.EXTFROM;
+                                if (SearchParameter.DATETO.equals(nodeName)) nodeName = SearchParameter.EXTTO;
+                             }
+
                             addValues(
                                     searchCriteria,
                                     (searchParamToLuceneField
@@ -343,6 +349,10 @@ public class UserQueryInput {
     private void addSearchCriteria(StringBuilder text) {
         for (Map.Entry<String, Set<String>> entry : searchCriteria.entrySet()) {
             String fieldName = (String) entry.getKey();
+
+
+
+
             Set<String> fieldValue = (Set<String>) entry.getValue();
             text.append(fieldName).append(":").append(fieldValue).append(" ");
         }
