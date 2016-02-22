@@ -307,6 +307,28 @@
           };
         }])
 
+      .directive('whereSearchRelationCombo', ['$translate', 'hotkeys', function ($translate, hotkeys) {
+        return {
+          restrict: 'A',
+          require: '^ngSearchForm',
+          templateUrl: '../../catalog/components/search/formfields/' +
+              'partials/whereSearchRelationCombo.html',
+          scope: {
+            params: '=',
+            values: '=gnRelationValues'
+          },
+
+
+          link: function (scope, element, attrs, searchFormCtrl) {
+            scope.whenSearchClick = function (v) {
+                searchFormCtrl.updateSearchParams({relation: v});
+                searchFormCtrl.triggerSearch(false);
+            };
+          }
+
+        };
+      }])
+
       .directive('hitsperpageCombo', [
         function() {
           return {

@@ -94,6 +94,10 @@
             hitsPerPage: searchSettings.hitsperpageValues[0]
           };
 
+          searchSettings.relationValues = [
+            {relation: 'within'},
+            {relation: 'overlaps'},
+            {relation: 'fullyoutsideof'}];
           /*
              * Sort by combo values configuration. The first one is the default.
              */
@@ -122,6 +126,9 @@
 
           /* Default search by option */
           searchSettings.sortbyDefault = searchSettings.sortbyValues[0];
+
+          /* Default relation option */
+          searchSettings.relationDefault = searchSettings.relationValues[0];
 
           /* Custom templates for search result views */
           searchSettings.resultViewTpls = [{

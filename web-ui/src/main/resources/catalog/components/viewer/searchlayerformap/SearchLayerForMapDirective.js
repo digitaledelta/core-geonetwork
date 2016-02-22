@@ -34,6 +34,7 @@
             $scope.searchObj = {
               permalink: false,
               hitsperpageValues: gnSearchSettings.hitsperpageValues,
+              relationValues: gnSearchSettings.relationValues,
               sortbyValues: gnSearchSettings.sortbyValues,
               params: {
                 protocol: 'OGC:WMS*',

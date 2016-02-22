@@ -30,6 +30,8 @@
         permalink: true,
         sortbyValues: gnSearchSettings.sortbyValues,
         sortbyDefault: gnSearchSettings.sortbyDefault,
+        relationValues: gnSearchSettings.relationValues,
+        relationDefault: gnSearchSettings.relationDefault,
         hitsperpageValues: gnSearchSettings.hitsperpageValues
       };
 

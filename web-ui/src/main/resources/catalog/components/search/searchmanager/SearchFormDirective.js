@@ -111,6 +111,12 @@
         angular.extend($scope.searchObj.params, $scope.searchObj.sortbyDefault);
       }
 
+      // Set default relation
+      if (angular.isUndefined($scope.searchObj.params.relation)) {
+        angular.extend($scope.searchObj.params, $scope.searchObj.relationDefault);
+      }
+
+
       // Don't add facet extra params to $scope.params but
       // compute them each time on a search.
       var params = angular.copy($scope.searchObj.params);
@@ -225,6 +231,10 @@
       }
       if ($scope.searchObj.sortbyDefault) {
         angular.extend($scope.searchObj.params, $scope.searchObj.sortbyDefault);
+      }
+
+      if ($scope.searchObj.relationDefault) {
+        angular.extend($scope.searchObj.params, $scope.searchObj.relationDefault);
       }
 
       var customPagination = searchParams;
